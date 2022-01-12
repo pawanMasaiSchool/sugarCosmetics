@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
+import styling from "../Footer.module.css"
 
 const NewsLetter = () => {
   return (
@@ -8,7 +9,7 @@ const NewsLetter = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        border: "2px solid red",
+        // border: "2px solid red",
         justifyContent: "left",
         textAlign: "left",
         width: "40%",
@@ -17,17 +18,17 @@ const NewsLetter = () => {
         color: "#ffffff"
       }}
     >
-      <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+      <p className={styling.footerHeadings}>SUBSCRIBE TO OUR NEWSLETTER</p>
       <Box
         sx={{
           // border: "2px solid red",
           display: "flex",
           flexDirection: "row",
-          marginTop: "55px"
+          marginTop: "40px"
         }}
       >
         <Input
-          sx={{ color: "#999999", borderBottom: "2px solid white" }}
+          sx={{ color: "#999999", borderBottom: "2px solid white", width:"55%" }}
           placeholder="Your email address"
         />
         <Button
@@ -35,6 +36,7 @@ const NewsLetter = () => {
             margin: "5px",
             background: "#FC2779",
             color: "#ffffff",
+            width:"16%",
             "&:hover": {
               color: "#ffffff",
               background: "#FC2779"

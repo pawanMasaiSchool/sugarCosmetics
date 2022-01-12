@@ -14,7 +14,7 @@ const SocialIcons = () => {
     >
       <FacebookIcon
         sx={{
-          fontSize: 38,
+          fontSize: 30,
           cursor: "pointer",
           color: "#999999",
           "&:hover": {
@@ -24,7 +24,7 @@ const SocialIcons = () => {
       />
       <TwitterIcon
         sx={{
-          fontSize: 38,
+          fontSize: 30,
           cursor: "pointer",
           color: "#999999",
           "&:hover": {
@@ -34,7 +34,7 @@ const SocialIcons = () => {
       />
       <EmailOutlinedIcon
         sx={{
-          fontSize: 38,
+          fontSize: 30,
           cursor: "pointer",
           color: "#999999",
           "&:hover": {
