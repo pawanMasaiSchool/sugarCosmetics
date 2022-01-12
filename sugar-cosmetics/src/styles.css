@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.fb {
+  width: 25px;
+  height: 29px;
+  color: aqua;
+}

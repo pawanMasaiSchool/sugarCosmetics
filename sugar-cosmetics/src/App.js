@@ -1,11 +1,18 @@
-import React from 'react';
+import { Footer } from "./Components/Footer";
+import "./styles.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      Sugar Cosmetics
+      <div
+        style={{
+          background: "black",
+          display: "flex",
+          gap: "25px",
+          justifyContent: "center"
+        }}
+      ></div>
+      <Footer />
     </div>
   );
 }
-
-export default App;

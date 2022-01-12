@@ -1,0 +1,8 @@
+.common {
+  color: #999999;
+  cursor: pointer;
+}
+.common:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
