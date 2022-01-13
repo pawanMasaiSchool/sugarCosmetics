@@ -1,0 +1,145 @@
+import styled from "styled-components"
+
+export const Item = styled.div`
+left: 0px;
+  right: 0px;
+  position:relative;
+  margin-left: -33.33%;
+  margin-right: -33.33%;
+display: flex;
+justify-content: center;
+transform: translateZ(0);
+
+
+width: 100vw;
+position:width;
+& :hover {
+  .rec.rec-arrow {
+    background-color: "red";
+    
+  }
+}
+
+> * {
+  width: inherit;
+
+  
+}
+`;
+export const WrapperItem = styled.div`
+    margin:1rem 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  left: 0px;
+  right: 0px;
+  &:hover {
+    > * .rec.rec-arrow {
+      display: block;
+    }
+  }
+`;
+
+export const WrapperItem2 = styled.div`
+    margin:2rem auto;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+
+  &:hover {
+    > * .rec.rec-arrow {
+      display: block;
+    }
+  }
+  > * .rec.rec-arrow:nth-of-type(1){
+    left:-2%;
+
+  }
+  > * .rec.rec-arrow:nth-of-type(2){
+left:100%;
+  }
+`;
+
+export const TopItemWrapper = styled.div`
+margin:2rem 0;
+> div{
+    font-size:${props => props.fontSize};
+    color:${props => props.color};
+    font-weight:${props => props.fontWeight};
+    line-height:34px
+}
+`
+
+export const ItemContainer=styled.div`
+{
+  left: ${props=>props.left};
+  
+  position:relative;
+  
+display: flex;
+
+justify-content: center;
+
+
+
+width: ${props=>props.width};
+
+> .box-item{
+  width:100%;
+  margin:${props=>props.margin};
+  
+} 
+> * img{
+    width:${props=>props.imageWidth};
+    padding:${props=>props.imagePadding};
+    height:${props=>props.imageHeight};
+
+}
+> * .product-name{
+    font-size:14px;
+    font-weight:700;
+    line-height:24px;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+}
+> * .price{
+    margin-top:10px;
+    font-size:16px;
+    font-weight:700;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+> * .chooseProduct{
+    font-size:16px;
+    background-color:black;
+    color:white;
+    padding:0.3rem;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+`
+export const WrapperItem3 = styled.div`
+    margin:2rem auto;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap:"1rem";
+  position: relative;
+
+  &:hover {
+    > * .rec.rec-arrow {
+      display: block;
+    }
+  }
+  > * .rec.rec-arrow:nth-of-type(1){
+    left:2%;
+
+  }
+  > * .rec.rec-arrow:nth-of-type(2){
+left:94%;
+  }
+`;
+
