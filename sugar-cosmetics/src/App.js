@@ -1,11 +1,25 @@
+import React, { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+import { getProduct } from './Redux/Products/actions';
+import Cart from './Pages/Cart';
+import { addToCart } from './Redux/Cart/actions';
+import Checkout from './Pages/Checkout';
 import { Footer } from "./Components/Footer/Footer";
 import "./styles.css";
 
 export default function App() {
+  const products = useSelector(state => state.products.products)
+  
+  const dispatch = useDispatch();  
+
+  useEffect(() => {
+    dispatch(getProduct())
+  }, [])
+  
   return (
-    <div className="App">
-      <Footer />
-    </div>
-    
+    <div className="App" style={{backgroundColor: "#f5f5f5"}}>
+        
+        <Footer />
+        </div>
   );
 }
