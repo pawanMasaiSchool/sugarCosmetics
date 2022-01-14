@@ -21,7 +21,7 @@ export function appReducer(state=initialState,action)
         }
         case actionConstraint.GET_DATA_FAILURE:{
             return {
-                ...state,isLoading:false,isError:false
+                ...state,isLoading:false,isError:true
             }
         }
     default:

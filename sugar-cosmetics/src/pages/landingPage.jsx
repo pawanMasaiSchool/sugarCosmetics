@@ -2,18 +2,15 @@ import { Grid, Paper } from '@mui/material';
 import { Box, maxWidth } from '@mui/system';
 import * as React from 'react';
 import { useState } from 'react';
-// import Grid from '@mui/material/Grid';
-
-// import Paper from '@mui/material/Paper';
-// import { Box } from '@mui/system';
 import {fetchData} from "../Redux/AppData/api"; 
 import Carousel from "react-elastic-carousel";
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { TopItemWrapper, Item, ItemContainer, WrapperItem, WrapperItem2, WrapperItem3 } from '../component/carouselWrapper';
-//import { getDataFailure, getDataRequest, getDataSuccess } from '../Redux/landingPage/action';
+import { TopItemWrapper, Item, ItemContainer, WrapperItem, WrapperItem2, WrapperItem3 } from '../component/allStyleComponent/carouselWrapper';
 
 
-import "./home.css"
+
+import "../component/allStyleComponent/home.css"
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const breakPoints = [
   { width: 650, itemsToShow: 3, itemsToScroll: 3 },
@@ -24,9 +21,14 @@ const breakPoints2 = [
 
 ];
 
-const CreateCard=({id,itemName,image,price})=>
+const CreateCard=({id,itemName,image,price,routes})=>
 {
-  return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px">
+  const history=useHistory()
+ const handleViewProduct=(routes)=>{
+  //  console.log(id)
+   history.push(routes)
+ }
+  return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px" onClick={()=>handleViewProduct(routes)}>
 
                 <Paper className="box-item">
                   <div>
@@ -69,7 +71,7 @@ const ItemDetails = ({ datas }) => {
             <Carousel breakPoints={breakPoints} pagination={false}>
 
 
-              {datas.map((item, i) => item.category == "face makeup" && item.name.length<40 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]}/>)}
+              {datas.map((item, i) => item.category == "face makeup" && item.name.length<40 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}/>)}
 
 
             </Carousel>
@@ -238,19 +240,21 @@ const ItemDetails = ({ datas }) => {
 
 export default function Home() {
   const { isLoading, isError, datas } = useSelector(state => state.appData,shallowEqual)
+console.log(isLoading,isError)
   const dispatch = useDispatch()
-  console.log(datas)
+  
   React.useEffect(() => {
     dispatch(fetchData())
     
 
   }, [])
   if (isLoading || isError) {
-    return <>{
+    return <div className='Home' style={{textAlign:"left"}}>{
       isLoading ? <h3>Loading...</h3> : <h3>something went wrong</h3>
-    }</>
+    }</div>
   }
   return <div className='Home'>
+    
     <ItemDetails datas={datas} />
   </div>
 }

@@ -65,12 +65,18 @@ left:100%;
 `;
 
 export const TopItemWrapper = styled.div`
-margin:2rem 0;
+margin:${props=>props.margin?props.margin:"2rem 0"};
+width:${props=>props.width?props.width:"auto"};
+background-color:${props=>props.bgColor?props.bgColor:"initial"};
+border-radius:${props=>props.borderRadius?props.borderRadius:"0"};
+
 > div{
     font-size:${props => props.fontSize};
     color:${props => props.color};
     font-weight:${props => props.fontWeight};
-    line-height:34px
+    line-height:34px;
+    padding:${props=>props.paddy?props.paddy:0}
+
 }
 `
 
@@ -121,12 +127,12 @@ width: ${props=>props.width};
 }
 `
 export const WrapperItem3 = styled.div`
-    margin:2rem auto;
+    margin:4rem auto;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap:"1rem";
+  
   position: relative;
 
   &:hover {
@@ -142,4 +148,38 @@ export const WrapperItem3 = styled.div`
 left:94%;
   }
 `;
+
+export const WrapperCarousel = styled.div`
+    margin:2rem 0;
+    // background-color:red;
+    
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  
+  position: relative;
+  left: 0px;
+  right: 0px;
+  
+  
+  > * .rec.rec-arrow:nth-of-type(1){
+    
+    top:-4rem;
+    left:calc(50% - 24px);
+    
+  }
+  > * .rec.rec-arrow:nth-of-type(2){
+top:95%;
+left:calc(50% - 24px);
+
+
+  }
+  > * .rec.rec-arrow{
+    display:block;
+    background-color:grey;
+  }
+ 
+`;
+
+
 
