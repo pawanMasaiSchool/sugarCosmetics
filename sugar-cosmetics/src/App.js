@@ -4,8 +4,10 @@ import { getProduct } from './Redux/Products/actions';
 import Cart from './Pages/Cart';
 import { addToCart } from './Redux/Cart/actions';
 import Checkout from './Pages/Checkout';
+import { Footer } from "./Components/Footer/Footer";
+import "./styles.css";
 
-function App() {
+export default function App() {
   const products = useSelector(state => state.products.products)
   
   const dispatch = useDispatch();  
@@ -16,19 +18,8 @@ function App() {
   
   return (
     <div className="App" style={{backgroundColor: "#f5f5f5"}}>
-        Sugar Cosmetics
-        <Checkout />
-        <Cart />
-        <div>
-        {products?.map(el => (
-          
-          <div>{el.name}<button onClick={() => dispatch(addToCart(el))}>Add</button></div>
-          
-        ))}
         
+        <Footer />
         </div>
-    </div>
   );
 }
-
-export default App;
