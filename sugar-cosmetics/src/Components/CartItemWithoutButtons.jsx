@@ -12,7 +12,7 @@ import RemoveProductPopup from './RemoveProductPopup';
 import { useState } from 'react';
 import { addToCart } from '../Redux/Cart/actions';
 
-const CartItem = ({props}) => {
+const CartItemWithoutButtons = ({props}) => {
     
     const dispatch = useDispatch()
 
@@ -67,4 +67,4 @@ const CartItem = ({props}) => {
     )
 }
 
-export default CartItem
+export default CartItemWithoutButtons
