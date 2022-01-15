@@ -7,6 +7,7 @@ const Information = () => {
         display: "flex",
         flexDirection: "column",
         // border: "2px solid red",
+        marginLeft:"60px",
         justifyContent: "left",
         textAlign: "left",
         width: "90%",
