@@ -3,7 +3,8 @@ import { actionConstraint } from "./actionType";
 const initialState={
     datas:[],
     isLoading:false,
-    isError:false
+    isError:false,
+    isProductFound:false
 }
 export function appReducer(state=initialState,action)
 {
@@ -16,7 +17,7 @@ export function appReducer(state=initialState,action)
         }
         case actionConstraint.GET_DATA_SUCCESS:{
             return {
-                ...state,isLoading:false,isError:false,datas:action.payload.datas
+                ...state,isLoading:false,isError:false,datas:action.payload.datas,isProductFound:action.payload.datas.length?false:true
             }
         }
         case actionConstraint.GET_DATA_FAILURE:{

@@ -22,7 +22,6 @@ const theme = createTheme({
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-  
     <Provider store={store}>
   <ThemeProvider theme={theme}> 
       <App />

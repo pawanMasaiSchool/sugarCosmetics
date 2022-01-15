@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { getDataRequest } from "../Redux/AppData/action";
 import { fetchData } from "../Redux/AppData/api";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const breakPoints = [
     { width: 650, itemsToShow: 3, itemsToScroll: 3 },
     { width: 1000, itemsToShow: 3, itemsToScroll: 3 }
@@ -75,7 +76,7 @@ const MoreAboutProductTab = () => {
 }
 export function ProductDetails() {
     const {url}=useParams()
-    console.log(url)
+    
     const imgRef = useRef(null)
     const [wishlist, setWishlist] = useState(true)
     const arr = new Array(20).fill(0)
@@ -83,19 +84,40 @@ export function ProductDetails() {
         imgRef.current.src = src
     }
     const dispatch=useDispatch() 
-    const { isLoading, isError, datas } = useSelector(state => state.appData,shallowEqual)
-    console.log(datas)
+    const { isLoading, isError,datas,isProductFound} = useSelector(state => state.appData)
+   
+    console.log(': url')
+    console.log(datas[0],'datas')
     useEffect(()=>{
         dispatch(fetchData(url))
+
+       
+        
     },[url])
-    return <div className="Home">
+    let rating=parseInt(datas[0]?.ratingValue?.trim())
+     const roundRating=Number(datas[0]?.ratingValue?.trim())
+     
+    if(rating&&roundRating)
+    {
+        rating=roundRating-rating>=0.4?rating+0.5:rating
+    }
+if(isProductFound||isLoading||isError){
+   return <div className="Home">
+ {isProductFound&&<div style={{width:"100%,textAlign:center"}}><h3>Product Not Found</h3><Link to="/">Back to main page</Link></div>}
+    {isLoading &&<h3>Loading ...</h3>}
+    {isError&&<div style={{width:"100%,textAlign:center"}}><h3>Something Went Wrong</h3><Link to="/">Back to main page</Link></div>}
+   </div>
+}
+        return (<div className="Home">
+
         <Wrapper>
+            
             <Paper sx={{ width: "100%" }}>
                 <Grid container spacing={0}>
                     <Grid item container xl={6} md={6} sm={6} lg={6} spacing={1}>
                         <Grid item xl={6} md={6} sm={6} lg={6}>
                             <ImageListBox padding="1.5rem">
-                                <img src="https://cdn.shopify.com/s/files/1/0906/2558/products/sugar-cosmetics-contour-de-force-mini-blush-01-peach-peak-soft-peach-pink-12785043210323.jpg?v=1619102648" style={{ width: "100%" }} ref={imgRef} />
+                                <img src={datas[0]?.image[0]} alt="not" style={{ width: "100%" }} ref={imgRef} />
                             </ImageListBox>
                         </Grid>
                         <Grid item xl={6} md={6} sm={6} lg={6}>
@@ -104,7 +126,7 @@ export function ProductDetails() {
                                     <Carousel verticalMode itemsToShow={3} pagination={false}>
 
 
-                                        {datas.map((_, i) => <ImageListBox padding="1rem"> <img src="https://cdn.shopify.com/s/files/1/0906/2558/products/Blendtrend-powderedbyimage_ad3b598b-0686-4259-80fe-e5494461c07f.jpg?v=1627660012" width="84px" onMouseEnter={(e) => handleImageChange(e.target.src)} /></ImageListBox>)}
+                                        {datas[0]?.image?.map((image, i) => <ImageListBox padding="1rem"> <img src={image} width="84px" onMouseEnter={(e) => handleImageChange(e.target.src)} /></ImageListBox>)}
 
 
                                     </Carousel>
@@ -117,7 +139,7 @@ export function ProductDetails() {
                         <ItemDetailsWrapper>
                             <TopItemWrapper fontSize="23px" fontWeight="400" margin="1rem">
                                 <div>
-                                    Blend Trend Face Brush - 007 Powder
+                                   {datas[0]?.name}
                                 </div>
                             </TopItemWrapper>
                             <Box
@@ -128,14 +150,14 @@ export function ProductDetails() {
                             >
                                 <Rating
 
-                                    value={3.5}
+                                    value={rating}
                                     precision={0.5}
                                     readOnly />
 
                                 <Box sx={{ ml: 2 }}></Box>
-                                5.0 (5)
+                                {roundRating.toFixed(2)} (5)
                             </Box>
-                            <TopItemWrapper fontSize="18px" color="#6c757d" fontWeight="400" margin="0.6rem"><div>₹ 400</div></TopItemWrapper>
+                            <TopItemWrapper fontSize="18px" color="#6c757d" fontWeight="400" margin="0.6rem"><div>₹ {datas[0]?.price}</div></TopItemWrapper>
                             <Box sx={{ marginTop: "0.8rem" }}>
                                 <Button startIcon={<LocalMallIcon />} variant="contained" sx={{ backgroundColor: "#1C1F23", width: "50%", fontSize: "16px", fontWeight: "400", fontStyle: "normal" }}>Add to cart</Button>
                             </Box>
@@ -154,7 +176,7 @@ export function ProductDetails() {
                 <MoreAboutProductTab key='prodct-desc-tab' />
             </Paper>
         </Wrapper>
-    </div>
+    </div>)
 }
 
 

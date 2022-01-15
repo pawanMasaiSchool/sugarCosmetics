@@ -125,6 +125,33 @@ width: ${props=>props.width};
     padding:0.3rem;
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
+> * .cartProduct{
+visibility:hidden;
+
+}
+> * .wishlist{
+  
+}
+&:hover{
+  border: 1px solid;
+  box-shadow:2px 2px 2px 2px #F5F5F5;
+border-box{
+  1px solid black;
+}
+
+>  * .cartProduct{
+    visibility:visible;
+    display:flex;
+    width:100%;
+    border:1px solid black;
+  }
+  > * .cartProduct > .chooseProduct{
+    width:80%;
+  }
+  > * .cartProduct > .wishlist{
+    width:20%;
+  }
+}
 `
 export const WrapperItem3 = styled.div`
     margin:4rem auto;
@@ -181,5 +208,20 @@ left:calc(50% - 24px);
  
 `;
 
+export const FlexWrapperItem = styled.div`
+    margin:2rem auto;
+  font-family: sans-serif;
+  display: flex;
+  flex-wrap:wrap;
+  background-color:red;
+  width: 90%;
+  gap:2rem;
+  position: relative;
+> div{
+width:calc(25% - 6rem)
+}
+
+  
+`;
 
 
