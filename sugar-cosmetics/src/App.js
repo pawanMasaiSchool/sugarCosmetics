@@ -1,15 +1,24 @@
 import React from 'react';
-import Home from "./pages/landingPage"
-import MakeupPage from './pages/makeupPage';
-import { ProductDetails } from './pages/productPage';
-import { AllRoutes } from './Routers/allPagesRoutes';
-function App() {
+import AllRoutes from "./AllRoutes/AllRoutes";
+import React, { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+import { getProduct } from './Redux/Products/actions';
+import { Footer } from "./Components/Footer/Footer";
+import { Header } from "./Components/Header/Header";
+import "./styles.css";
+
+export default function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProduct())
+  }, [])
+  
   return (
     <div className="App">
-      <MakeupPage />
-      
+      <Header />
+      <AllRoutes />
+      <Footer />
+
     </div>
   );
 }
-
-export default App;
