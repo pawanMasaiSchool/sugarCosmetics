@@ -1,4 +1,3 @@
-import React from 'react';
 import AllRoutes from "./AllRoutes/AllRoutes";
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
@@ -8,7 +7,9 @@ import { Header } from "./Components/Header/Header";
 import "./styles.css";
 
 export default function App() {
-  const dispatch = useDispatch();
+  
+  const dispatch = useDispatch();  
+
   useEffect(() => {
     dispatch(getProduct())
   }, [])
@@ -18,7 +19,7 @@ export default function App() {
       <Header />
       <AllRoutes />
       <Footer />
-
+      
     </div>
   );
 }
