@@ -27,8 +27,8 @@ const GetNewApp = () =>{
         }}
       >
         <p>Tap into a better shopping experience.</p>
-        <img style={{width:"80px", height:"35px", marginLeft:"15px"}} src="https://in.sugarcosmetics.com/playstore.png" />
-        <img style={{width:"80px", height:"35px", marginLeft:"15px"}} src="https://in.sugarcosmetics.com/apple-store.png" />
+        <img style={{width:"98px", height:"35px", marginLeft:"15px", cursor:"pointer"}} src="https://in.sugarcosmetics.com/playstore.png" />
+        <img style={{width:"98px", height:"35px", marginLeft:"15px", cursor:"pointer"}} src="https://in.sugarcosmetics.com/apple-store.png" />
       </Box>
     </Box>
     )

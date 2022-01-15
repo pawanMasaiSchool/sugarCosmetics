@@ -11,14 +11,14 @@ const Footer = () => {
     <>
     
     
-    <Box sx={{ backgroundColor: "#000000", padding: "50px", color:"#ffffff", width:"90%", margin:"auto" }}>
+    <Box sx={{ backgroundColor: "#000000", padding: "0px", color:"#ffffff", width:"100%", margin:"auto" }}>
       <img
         src="https://in.sugarcosmetics.com/Footer_sugar_icon.png"
         style={{ width: "100px", height: "100px" }}
         alt="sugar"
       />
       <SocialIcons />
-      <Box sx={{display:"flex",flexDirection:"row", gap:"15%"}}>
+      <Box sx={{display:"flex",flexDirection:"row", gap:"6%", marginLeft:"60px"}}>
       <NewsLetter />
       <GetNewApp />
       </Box>
@@ -26,8 +26,8 @@ const Footer = () => {
       <GetInTouch /><br/>
       <hr/><br/>
       <p>Copyright © 2022 SUGAR Cosmetics. All rights reserved.</p>
+      <br/><br/>
     </Box>
-    <div>hi</div>
     </>
   );
 };
