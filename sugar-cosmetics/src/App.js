@@ -23,7 +23,6 @@ export default function App() {
     <div className="App">
       <Header />
       <AllRoutes />
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <Footer />
     </div>
   );

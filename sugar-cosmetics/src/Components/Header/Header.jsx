@@ -9,7 +9,7 @@ const Header = () => {
         <Box>
             {/* <Box><FreeOffer /></Box><br/><br/> */}
             <Box><SearchBar /></Box><br/><br/><br/><br/>
-            <Box><Navbar /></Box>
+            <Box><Navbar /></Box><br/><br/><br/>
         </Box>
     )
 }
