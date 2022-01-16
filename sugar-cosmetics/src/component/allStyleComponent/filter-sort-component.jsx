@@ -7,7 +7,6 @@ import SortIcon from '@mui/icons-material/Sort';
 import { Button, Checkbox, Divider, FormControlLabel, FormGroup, Grid, Menu, MenuItem, Paper, Popover, Typography } from "@mui/material";
 import styles from "./filter.module.css"
 import { useEffect, useState } from "react";
-import { ItemContainer } from "./carouselWrapper";
 import { fetchData } from "../../Redux/AppData/api";
 import { useDispatch, useStore } from "react-redux";
 import { useHistory } from "react-router-dom";
