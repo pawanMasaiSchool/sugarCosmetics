@@ -37,7 +37,7 @@ const GiftCard = () => {
         }
     }
     return (
-        <FlexDiv align="center" gap="4px" style={{paddingTop:"0.5rem"}}>
+        <FlexDiv align="center" gap="4px">
             <div><img src="https://sugarcosmetics.com/desc-images/GiftCard.svg" width="20px" height="20px" /></div>
             <div><p style={{fontSize:"14px"}}>Gift Card/Discount Code</p></div>
             <div style={{height:"30px", borderRadius:"0.25rem", paddingRight: "0.5rem",  paddingLeft: "0.5rem"}}>

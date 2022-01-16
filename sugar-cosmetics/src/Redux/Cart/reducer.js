@@ -9,7 +9,9 @@ const initState = {
     discountCodes: {
         "NEWYEAR30": 30,
         "NEWUSER": 50
-    }
+    },
+    isLoading: false,
+    isError: false
 }
 
 const cartReducer = (state = initState, action) => {
@@ -51,6 +53,26 @@ const cartReducer = (state = initState, action) => {
             return {
                 ...state,
                 discount: action.payload
+            }
+        case actionConstants.PLACE_ORDER_REQUEST:
+            return {
+                ...state,
+                isLoading: true
+            }
+        case actionConstants.PLACE_ORDER_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                cart: [],
+                cartTotal: 0,
+                cartQuantity: 0,
+                discount: 0
+            }
+        case actionConstants.PLACE_ORDER_FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+                isError: true
             }
         default:
             return state
