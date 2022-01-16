@@ -1,10 +1,14 @@
+import axios from "axios"
 
 
 export const actionConstants = {
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
     DELETE_PRODUCT: "DELETE_PRODUCT",
-    APPLY_DISCOUNT: "APPLY_DISCOUNT"
+    APPLY_DISCOUNT: "APPLY_DISCOUNT",
+    PLACE_ORDER_REQUEST: "PLACE_ORDER_REQUEST",
+    PLACE_ORDER_SUCCESS: "PLACE_ORDER_SUCCESS",
+    PLACE_ORDER_FAILURE: "PLACE_ORDER_FAILURE"
     
 }
 
@@ -41,4 +45,38 @@ export const applyDiscount = (discount) => {
         type: actionConstants.APPLY_DISCOUNT,
         payload: discount
     }
+}
+
+// place order
+
+const placeOrderRequest = () => {
+    return {
+        type: actionConstants.PLACE_ORDER_REQUEST
+    }
+}
+
+const placeOrderSuccess = () => {
+    return {
+        type: actionConstants.PLACE_ORDER_SUCCESS
+    }
+}
+
+const placeOrderFailure = () => {
+    return {
+        type: actionConstants.PLACE_ORDER_FAILURE
+    }
+}
+
+export const placeOrder = (totalItems, cartTotal, cart) => async (dispatch) => {
+    dispatch(placeOrderRequest())
+    await axios.post("http://cw-sugarcosmetics-mock-server.herokuapp.com/orders", {
+        totalItems,
+        cartTotal, 
+        cart,
+        method: "cod"
+    })
+    .then(dispatch(placeOrderSuccess()))
+    .catch(err => dispatch(placeOrderFailure()));
+
+    alert("Order Placed")
 }

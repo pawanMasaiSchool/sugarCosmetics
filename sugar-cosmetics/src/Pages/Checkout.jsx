@@ -18,7 +18,7 @@ const Checkout = () => {
     return (
         <CartBox>
             {/* Left */}
-            <CartBoxDiv style={{paddingLeft:"0px"}}>
+            <CartBoxDiv style={{paddingLeft:"0px", marginTop:"12px"}}>
                 {/* Price Details Div */}
                 <FlexDiv align="center" gap="6px">
                     <img src="https://sugarcosmetics.com/desc-images/PriceDetails.svg" width="20px" height="20px"/>
@@ -26,16 +26,16 @@ const Checkout = () => {
                 </FlexDiv>
                 <CartPriceBreakdown  style={{paddingLeft:"0px"}}/>
                 <FlexDiv style={{padding:"0px"}} align="center"><ShoppingCartOutlinedIcon sx={{color:"#575555"}} /><p style={{color:"#6c757", paddingLeft:"0.5rem", paddingRight:"0.5rem", fontSize:"13px", fontWeight:"400"}}><span style={{textDecoration:"underline"}}>Orde</span>r Summary</p></FlexDiv>
-                <FlexDiv direction="column" gap="15px">
+                <FlexDiv style={{marginTop:'12px'}} direction="column" gap="15px">
                     {cart?.map(el => {
                         return <CartItem props = {el} />
                     } )}
                 </FlexDiv>
             </CartBoxDiv>
             {/* Right */}
-            <CartBoxDiv>
-                <FlexDiv style={{padding:"0px"}} align="center"><ContactsIcon sx={{color:"#575555"}} /><p style={{color:"#6c757", paddingLeft:"0.5rem", paddingRight:"0.5rem", fontSize:"13px", fontWeight:"400"}}><span style={{textDecoration:"underline"}}>Cont</span>act Information</p></FlexDiv>
-                <UserAddressBox />
+            <CartBoxDiv style={{marginTop:"12px"}}>
+                <FlexDiv style={{padding:"0px"}} align="center"><ContactsIcon fontSize="small" sx={{color:"#575555"}} /><p style={{color:"#6c757", paddingLeft:"0.5rem", paddingRight:"0.5rem", fontSize:"13px", fontWeight:"400"}}><span style={{textDecoration:"underline"}}>Cont</span>act Information</p></FlexDiv>
+                <UserAddressBox  />
             </CartBoxDiv>
         </CartBox>
     )

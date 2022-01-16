@@ -12,7 +12,7 @@ import CartBoxDiv from '../Styled/Cart/CartBoxDiv';
 import FlexDiv from '../Styled/FlexDiv';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import { calculateTotal } from '../Utils/utilFunctions';
-import CartPriceBreakdown from '../Components/CartPriceBreakdown';
+import CartPriceBreakdownWithPaddingLeft from '../Components/CartPriceBreakdownWithPaddingLeft';
 import GiftCard from '../Components/GiftCard';
 
 const Cart = () => {
@@ -22,14 +22,14 @@ const Cart = () => {
     const cartTotal = useSelector(state => state.cart.cartTotal)
 
     return (
-        <CartBox>
+        <CartBox style={{padding: "5px 10px"}}>
             {/* Left */}
-            <CartBoxDiv>
+            <CartBoxDiv  style={{marginTop:"12px"}}>
                 <FlexDiv align="center" justify="space-between">
                     <FlexDiv justify="center" align="center"><ShoppingCartOutlinedIcon sx={{color:"#575555"}} /><CartHeading>Order Summary</CartHeading></FlexDiv>
-                    <CartHeading>Cart Total: Rs {cartTotal.toFixed(2)}</CartHeading>
+                    <CartHeading><span style={{textDecoration:"underline"}}>Cart Total: Rs {cartTotal.toFixed(2)}</span></CartHeading>
                 </FlexDiv>
-                <FlexDiv direction="column" gap="15px">
+                <FlexDiv style={{marginTop:"12px"}} direction="column" gap="15px">
                     {cart?.map(el => {
                         return <CartItem props = {el} />
                     } )}
@@ -37,13 +37,13 @@ const Cart = () => {
             </CartBoxDiv>
 
             {/* Right */}
-            <CartBoxDiv>
+            <CartBoxDiv style={{marginTop:"12px"}}> 
                     <FlexDiv align="center" gap="6px">
                         <PaymentsIcon style={{color:"#575555", fontSize:"18px"}} />
                         <CartHeading>Offers and Price Details</CartHeading>
                     </FlexDiv>
 
-                    <FlexDiv className={styles.offerAndPriceBox} direction="column">
+                    <FlexDiv className={styles.offerAndPriceBox} direction="column" style={{marginTop:"12px"}} gap="4px">
                         {/* Gift Card Div */}
                         <GiftCard />
 
@@ -54,7 +54,7 @@ const Cart = () => {
                         </FlexDiv>
 
                         {/* Price Breakdown */}
-                        <CartPriceBreakdown />
+                        <CartPriceBreakdownWithPaddingLeft />
 
                         <FlexDiv style={{marginTop:"22px"}}>
                             <button className={styles.continueShopping}> {"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Continue Shopping</span></button>

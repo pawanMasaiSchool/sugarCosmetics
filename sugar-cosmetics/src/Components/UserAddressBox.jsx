@@ -8,7 +8,7 @@ const UserAddressBox = () => {
     const cartTotal = useSelector(state => state.cart.cartTotal)
     const discount = useSelector(state => state.cart.discount)
     return (
-        <FlexDiv style={{padding:"0 1rem"}} className={styles.offerAndPriceBox} direction="column">
+        <FlexDiv style={{padding:"6px 1rem", marginTop:'6px'}} className={styles.offerAndPriceBox} direction="column">
             <FlexDiv justify="space-between" style={{margin:"0"}}>
                 <FlexDiv  style={{margin:"0"}}  align="center">
                     <p className={styles.textMuted}>Full name</p>
