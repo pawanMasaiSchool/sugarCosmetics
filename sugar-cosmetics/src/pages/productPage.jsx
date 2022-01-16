@@ -76,7 +76,7 @@ const MoreAboutProductTab = () => {
 }
 export function ProductDetails() {
     const {url}=useParams()
-    
+    console.log(url,'url')
     const imgRef = useRef(null)
     const [wishlist, setWishlist] = useState(true)
     const arr = new Array(20).fill(0)
@@ -85,12 +85,11 @@ export function ProductDetails() {
     }
     const dispatch=useDispatch() 
     const { isLoading, isError,datas,isProductFound} = useSelector(state => state.appData)
-   
-    console.log(': url')
-    console.log(datas[0],'datas')
     useEffect(()=>{
-        dispatch(fetchData(url))
+        let query='?route=/products/'+url
 
+        dispatch(fetchData(query))
+        
        
         
     },[url])

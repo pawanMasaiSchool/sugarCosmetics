@@ -3,11 +3,13 @@ import { useHistory } from "react-router-dom"
 import {ItemContainer} from "../component/allStyleComponent/carouselWrapper"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { FilterSort } from "../component/allStyleComponent/filter-sort-component";
+import "../component/allStyleComponent/home.css"
+import { useSelector } from "react-redux";
 const CreateCard=({id,itemName,image,price,routes})=>
 {
   const history=useHistory()
  const handleViewProduct=(routes)=>{
-    alert('clcick')
+    
    history.push(routes)
  }
   return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px" >
@@ -38,14 +40,18 @@ const CreateCard=({id,itemName,image,price,routes})=>
 
 export default function MakeupPage(){
     const arr=new Array(20).fill(0)
-    return <div className="Home">
+    const {isLoading, isError, datas}=useSelector(state=>state.appData)
+    
+    
+   
+    return <div className="Home" style={{backgroundColor:"#f5"}}>
       <div className='top-heading-filter'>
         <FilterSort />
       </div>
          <Grid container spacing={1} sx={{width:"85%", margin:"1rem auto"}}>
 
     
-    {arr.map((_, i) =><Grid sx={{margin:"1rem 0"}} item lg={3}><CreateCard key={"any"+i} id={i} itemName={"anything"} price={5000} image="https://cdn.shopify.com/s/files/1/0906/2558/products/sugar-cosmetics-contour-de-force-mini-blush-01-peach-peak-soft-peach-pink-11020203884627.jpg?v=1619102626" routes={"2"}/></Grid>)}
+    {datas.map((item, i) =><Grid sx={{margin:"1rem 0"}} item lg={3}><CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}/></Grid>)}
 
 </Grid>
     </div>

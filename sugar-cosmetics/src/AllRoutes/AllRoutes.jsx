@@ -1,15 +1,18 @@
 import { Route,Switch } from "react-router-dom";
 import Box from '@mui/material/Box';
+import MakeupPage from "../pages/makeupPage";
+import { Home } from "@mui/icons-material";
+import { ProductDetails } from "../pages/productPage";
+import HomePage from "../pages/landingPage";
 
 
 function AllRoutes(){
     return (
         <Switch>
             <Route exact path="/">
-                {/* <Box sx={{position:"relative", top:"100px"}}><h1>Home</h1></Box> */}
+                <HomePage />
             </Route>
-            <Route exact path="/makeup">
-                <Box sx={{position:"relative", top:"100px"}}><h1>Makeup</h1></Box>
+            <Route exact path="/makeup"><MakeupPage />
             </Route>
             <Route exact path="/brushes">
                 <Box sx={{position:"relative", top:"100px"}}><h1>Brushes</h1></Box>
@@ -29,9 +32,13 @@ function AllRoutes(){
             <Route exact path="/2021highlights">
                 <Box sx={{position:"relative", top:"100px"}}><h1>2021 Hightlights</h1></Box>
             </Route>
+            <Route exact path="/products/:url">
+            <ProductDetails />
+            </Route>
             <Route>
                 <Box sx={{position:"relative", top:"100px"}}><h1>Page not found</h1></Box>
             </Route>
+          
         </Switch>
     )
 }

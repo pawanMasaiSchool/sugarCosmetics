@@ -238,7 +238,7 @@ const ItemDetails = ({ datas }) => {
 
 
 
-export default function Home() {
+export default function HomePage() {
   const { isLoading, isError, datas } = useSelector(state => state.appData,shallowEqual)
 console.log(isLoading,isError)
   const dispatch = useDispatch()
