@@ -8,13 +8,10 @@ import { GetNewApp } from "./GetNewApp/GetNewApp";
 
 const Footer = () => {
   return (
-    <>
-    
-    
-    <Box sx={{ backgroundColor: "#000000", padding: "0px", color:"#ffffff", width:"100%", margin:"auto" }}>
+    <Box sx={{ backgroundColor: "#000000", color:"#ffffff",padding:"30px", width:"96%", textAlign:"center", fontFamily:"sans-serif", margin:"auto" }}>
       <img
         src="https://in.sugarcosmetics.com/Footer_sugar_icon.png"
-        style={{ width: "100px", height: "100px" }}
+        style={{ width: "100px", height: "100px", margin:"auto" }}
         alt="sugar"
       />
       <SocialIcons />
@@ -28,7 +25,6 @@ const Footer = () => {
       <p>Copyright © 2022 SUGAR Cosmetics. All rights reserved.</p>
       <br/><br/>
     </Box>
-    </>
   );
 };
 

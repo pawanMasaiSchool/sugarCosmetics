@@ -8,13 +8,13 @@ const Navbar = () =>{
         <Box 
         sx={{background:"#ffffff", 
             position:"fixed",
-            // border:"2px solid green", 
             display:"flex",
             gap:"2%", 
             width:"98.5%", 
             // marginTop:"5px", 
             color:"#6C757D",
             padding:"18px",
+            zIndex:"200",
             boxShadow:"0px 3px 2px #e4e2e2"
             }}>
 

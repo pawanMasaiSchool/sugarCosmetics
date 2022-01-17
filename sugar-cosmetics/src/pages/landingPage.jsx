@@ -11,6 +11,8 @@ import { TopItemWrapper, Item, ItemContainer, WrapperItem, WrapperItem2, Wrapper
 
 import "../component/allStyleComponent/home.css"
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Footer } from '../Components/Footer/Footer';
+import { Header } from '../Components/Header/Header';
 
 const breakPoints = [
   { width: 650, itemsToShow: 3, itemsToScroll: 3 },
@@ -254,7 +256,8 @@ console.log(isLoading,isError)
     }</div>
   }
   return <div className='Home'>
-    
+    {/* <Header /> */}
     <ItemDetails datas={datas} />
+    {/* <Footer/> */}
   </div>
 }

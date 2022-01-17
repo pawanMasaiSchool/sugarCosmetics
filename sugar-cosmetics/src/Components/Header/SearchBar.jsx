@@ -4,6 +4,7 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import Link from '@mui/material/Link';
 import PersonIcon from '@mui/icons-material/Person';
 import Tooltip from '@mui/material/Tooltip';
+import TemporaryDrawer from './myDrawer';
 
 
 const SearchBar = () =>{
@@ -11,8 +12,8 @@ const SearchBar = () =>{
         <Box 
         sx={{background:"#F8F9FA", 
             position:"fixed",
-            // border:"2px solid green", 
             display:"flex",
+            zIndex:"200",
             height:"45px",
             gap:"7%", 
             width:"98.5%", 
@@ -25,7 +26,6 @@ const SearchBar = () =>{
                     style={{marginTop:"5px", 
                             width:"120px", 
                             height:"35px",
-                            // border:"1px solid red", 
                             marginLeft:"50px"}} 
                 />
             </Link>
@@ -52,21 +52,21 @@ const SearchBar = () =>{
 
             <Box sx={{display:"flex", flexDirection:"row", gap:"2px", padding:"10px 0px 0px 0px"}}>
                 <PersonIcon />
-                <Link sx={{color:"#000000", 
+                {/* <Link sx={{color:"#000000", 
                         textDecoration:"underline", 
                         cursor:"pointer",
                         fontSize:"15px",
                         padding:"4px 1px"
                         }}>Login/Register
-                </Link>
+                </Link> */}
+                <TemporaryDrawer />
             </Box>
                 
             <Box 
                 sx={{display:"flex", 
                     flexDirection:"row", 
                     gap:"10px", 
-                    padding:"16px 0px 0px 0px", 
-                    // border:"2px solid red"
+                    padding:"16px 0px 0px 0px",
                     }}>
                     <Tooltip sx={{width:"10px"}} title="Wishlist" placement='top-start'>
                         <FavoriteIcon sx={{cursor:"pointer", width:"20px", height:"20px",}} />

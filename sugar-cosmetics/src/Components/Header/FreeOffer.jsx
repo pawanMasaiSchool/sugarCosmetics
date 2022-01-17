@@ -1,14 +1,11 @@
 import { Box } from "@mui/system"
-import { useState } from "react"
 
-const FreeOffer = () =>{
-    const [free, setFree] = useState(true);
-    const handleClick = () =>{
-        setFree(false);
-    }
+
+const FreeOffer = ({handleClick}) =>{
+    
     
     return (
-        <>{ free && <Box 
+        <Box 
             sx={{ color:"white",
                 background:"black",
                 height:"auto",
@@ -19,6 +16,7 @@ const FreeOffer = () =>{
                 padding:"9px",
                 margin:"auto", 
                 position:"absolute",
+                zIndex:"2000",
                 display:"flex",
                 flexDirection:"row", 
                 justifyContent:"center"}}>
@@ -29,8 +27,8 @@ const FreeOffer = () =>{
                             onClick={handleClick}>
                             <p >X</p>
                 </Box>
-            </Box>}
-            </>
+            </Box>
+            
     )
 }
 
