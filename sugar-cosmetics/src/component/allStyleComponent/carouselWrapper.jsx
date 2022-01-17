@@ -40,6 +40,7 @@ export const WrapperItem = styled.div`
       display: block;
     }
   }
+ 
 `;
 
 export const WrapperItem2 = styled.div`
@@ -127,6 +128,8 @@ width: ${props=>props.width};
 }
 > * .cartProduct{
 visibility:hidden;
+position:absolute;
+bottom:0px;
 
 }
 > * .wishlist{

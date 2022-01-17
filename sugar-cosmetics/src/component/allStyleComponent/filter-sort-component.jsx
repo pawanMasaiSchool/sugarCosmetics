@@ -108,7 +108,7 @@ const SortContainerEvent = ({handlePriceSort}) => {
             }}
         >
             <Box onMouseLeave={handlePopoverClose}>
-                <MenuItem sx={{ padding: "0.5rem 1.8rem", width: "100%", '&hover': { backgroundColor: 'black' },backgroundColor:state=='0'?'black':'white',color:state=='0'?'white':'#000000' }} onClick={()=>{handlePriceSort(0)
+                <MenuItem sx={{ padding: "0.5rem 1.8rem", width: "100%",backgroundColor:state=='0'?'black':'white',color:state=='0'?'white':'#000000' }} onClick={()=>{handlePriceSort(0)
                 setState(0)
                 handlePopoverClose()
                 }}><Button sx={{color:state=='0'?'white':'#000000'}}startIcon={<CompareArrows sx={{transform:'rotate(90deg)'}}/>}>Relevance</Button></MenuItem>

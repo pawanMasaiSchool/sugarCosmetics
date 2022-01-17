@@ -14,7 +14,7 @@ const CreateCard=({id,itemName,image,price,routes})=>
  }
   return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px" >
 
-                <Paper className="box-item" sx={{cursor:"pointer"}}>
+                <Paper className="box-item" sx={{cursor:"pointer",height:"400px"}}>
                  <div onClick={()=>handleViewProduct(routes)}>
                   <div>
                     <img src={image} />
