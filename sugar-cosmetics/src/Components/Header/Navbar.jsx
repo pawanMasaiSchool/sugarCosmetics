@@ -15,7 +15,8 @@ const Navbar = () =>{
             // marginTop:"5px", 
             color:"#6C757D",
             padding:"18px",
-            boxShadow:"0px 3px 2px #e4e2e2"
+            boxShadow:"0px 3px 2px #e4e2e2",
+            zIndex:"20000"
             }}>
 
             <Box className={styling.right_menu}>

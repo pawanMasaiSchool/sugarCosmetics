@@ -10,6 +10,7 @@ const SearchBar = () =>{
     return (
         <Box 
         sx={{background:"#F8F9FA", 
+            zIndex:"20000",
             position:"fixed",
             // border:"2px solid green", 
             display:"flex",

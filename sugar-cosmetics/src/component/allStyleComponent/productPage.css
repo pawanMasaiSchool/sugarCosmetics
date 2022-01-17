@@ -1,9 +1,10 @@
 .Home {
-    position: absolute;
+    
     text-align: center;
     width:100%;
     background-color: #F5F5F5;
     min-height: 100vh;
+    
   }
   .controls-wrapper {
     width: 100%;

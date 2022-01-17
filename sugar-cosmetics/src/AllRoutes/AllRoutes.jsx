@@ -10,8 +10,7 @@ function AllRoutes(){
             <Route exact path="/">
                 <Box sx={{position:"relative", top:"100px"}}><h1>Home</h1></Box>
             </Route>
-            <Route exact path="/makeup">
-                <Box sx={{position:"relative", top:"100px"}}><h1>Makeup</h1></Box>
+            <Route exact path="/makeup"><MakeupPage />
             </Route>
             <Route exact path="/brushes">
                 <Box sx={{position:"relative", top:"100px"}}><h1>Brushes</h1></Box>
