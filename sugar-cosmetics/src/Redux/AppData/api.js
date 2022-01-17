@@ -6,8 +6,8 @@ export const fetchData=(query=null)=>(dispatch)=>{
     let urls="https://cw-sugarcosmetics-mock-server.herokuapp.com/products"
     if(query)
     {
-        query='?route=/products/'+query
-        urls+=query
+      
+        urls+='?'+query
     }
     return fetch(urls).then(res => res.json()).then((res) => {
        dispatch(getDataSuccess(res))
