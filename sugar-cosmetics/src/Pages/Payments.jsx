@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import styles from "../cssModules/Cart.module.css"
 import { placeOrder } from '../Redux/Cart/actions';
 import { useDispatch } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
 
 const paymentMethods = [
@@ -56,7 +57,7 @@ const Payments = () => {
                 <FlexDiv style={{padding:"0px"}} align="center"><ShoppingCartOutlinedIcon sx={{color:"#575555"}} /><p style={{color:"#6c757", paddingLeft:"0.5rem", paddingRight:"0.5rem", fontSize:"13px", fontWeight:"400"}}><span style={{textDecoration:"underline"}}>Orde</span>r Summary</p></FlexDiv>
                 <FlexDiv style={{marginTop:"12px"}} direction="column" gap="15px">
                     {cart?.map(el => {
-                        return <CartItem props = {el} />
+                        return <CartItemWithoutButtons props = {el} />
                     } )}
                 </FlexDiv>
             </CartBoxDiv>
@@ -74,8 +75,11 @@ const Payments = () => {
                         {paymentMethods?.map( el => <PaymentMethodOption src={el.img} text={el.text} />)}
                     </FlexDiv>
                     <FlexDiv style={{marginTop:"22px", marginBottom:"32px"}}>
-                            <button className={styles.continueShopping}> {"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Delivery Info</span></button>
-                            <button onClick = {() => dispatch(placeOrder(cartQuantity, cartTotal, cart))} className={styles.deliveryInfo}>Proceed to Payment (Rs. {(cartTotal + 49.00 - ((discount/100) * cartTotal)).toFixed(2)}) </button>
+                            <button className={styles.continueShopping}><Link style={{textDecoration:"none", color:"inherit"}} to="/checkout">{"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Delivery Info</span></Link></button>
+                            <button onClick = {() => {
+                                dispatch(placeOrder(cartQuantity, cartTotal, cart))
+                                
+                            }} className={styles.deliveryInfo}><Link style={{textDecoration:"none", color:"inherit"}} to="/">Proceed to Payment (Rs. {(cartTotal + 49.00 - ((discount/100) * cartTotal)).toFixed(2)})</Link> </button>
                         </FlexDiv>
                     </FlexDiv>
                 </FlexDiv>
