@@ -2,6 +2,8 @@ import React from 'react'
 import FlexDiv from '../Styled/FlexDiv'
 import styles from "../cssModules/Cart.module.css"
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 
 const UserAddressBox = () => {
@@ -36,8 +38,8 @@ const UserAddressBox = () => {
                 <p style={{margin:"0", marginBottom:"2px"}}>Chandigarh, Punjab, 160036, India.</p>
             </div>
             <FlexDiv style={{marginBottom:"24px"}}>
-                <button className={styles.continueShopping}> {"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Offers and Pricing</span></button>
-                <button className={styles.deliveryInfo}>Proceed to Payment ( Rs {(cartTotal + 49.00 - ((discount/100) * cartTotal)).toFixed(2)} ) </button>
+                <button className={styles.continueShopping}><Link style={{textDecoration:"none", color:"inherit"}} to="/cart"> {"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Offers and Pricing</span></Link></button>
+                <button className={styles.deliveryInfo}><Link style={{textDecoration:"none", color:"inherit"}} to="/payments">Proceed to Payment ( Rs {(cartTotal + 49.00 - ((discount/100) * cartTotal)).toFixed(2)} )</Link> </button>
             </FlexDiv>
         </FlexDiv>
     )

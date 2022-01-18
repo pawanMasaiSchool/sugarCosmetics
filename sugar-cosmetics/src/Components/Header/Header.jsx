@@ -6,7 +6,7 @@ import { SearchBar } from "./SearchBar"
 const Header = () => {
     
     return (
-        <Box>
+        <Box sx={{marginBottom:"24px"}}>
             {/* <Box><FreeOffer /></Box><br/><br/> */}
             <Box><SearchBar /></Box><br/><br/><br/><br/>
             <Box><Navbar /></Box><br/><br/><br/>

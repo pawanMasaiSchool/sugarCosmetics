@@ -11,7 +11,7 @@ const Footer = () => {
     <>
     
     
-    <Box sx={{ backgroundColor: "#000000", padding: "0px", color:"#ffffff", width:"100%", margin:"auto" }}>
+    <Box sx={{ backgroundColor: "#000000", padding: "0px", color:"#ffffff", width:"100%", margin:"auto", marginTop:"36px" }}>
       <img
         src="https://in.sugarcosmetics.com/Footer_sugar_icon.png"
         style={{ width: "100px", height: "100px" }}

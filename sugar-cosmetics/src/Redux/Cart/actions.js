@@ -1,4 +1,5 @@
 import axios from "axios"
+import { getOrders } from "../Admin/actions"
 
 
 export const actionConstants = {
@@ -75,7 +76,10 @@ export const placeOrder = (totalItems, cartTotal, cart) => async (dispatch) => {
         cart,
         method: "cod"
     })
-    .then(dispatch(placeOrderSuccess()))
+    .then(res => {
+        dispatch(placeOrderSuccess());
+        dispatch(getOrders());
+    })
     .catch(err => dispatch(placeOrderFailure()));
 
     alert("Order Placed")
