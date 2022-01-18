@@ -5,13 +5,15 @@ import productReducer from './Products/reducer';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { appReducer } from './AppData/reducer';
+import { deleteStoreReducer } from './Admin/DeleteProduct/reducer';
 
 
 const rootReducer = combineReducers({
   login: loginReducer,
   cart: cartReducer,
   appData:appReducer,
-  products: productReducer
+  products: productReducer,
+  deleteApi:deleteStoreReducer
 
 })
 

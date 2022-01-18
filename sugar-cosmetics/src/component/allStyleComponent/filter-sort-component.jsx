@@ -57,9 +57,11 @@ const handleResetButton=()=>{
             }}
         >
             <Box onMouseLeave={handlePopoverClose}>
+                
                 <div style={{textAlign:'right'}}>
                     <div className={styles.clearFilter} onClick={handleResetButton}>clear filter</div>
                 </div>
+                <div style={{textAlign:'center',marginTop:'0.54rem',textDecoration:"underline"}}><strong>Product Category</strong></div>
                 <FormGroup sx={{ padding: "1rem" }}>
                     <FormControlLabel control={<Checkbox value="face makeup" checked={state['face makeup']}  onChange={(e)=>handleChange(e)}/>} label="face makeup" />
                     <FormControlLabel control={<Checkbox value="lip makeup" checked={state['lip makeup']}  onChange={(e)=>handleChange(e)}/>} label="lip makeup" />

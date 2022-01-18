@@ -4,8 +4,8 @@ import MakeupPage from "../pages/makeupPage";
 import { Home } from "@mui/icons-material";
 import { ProductDetails } from "../pages/productPage";
 import HomePage from "../pages/landingPage";
-
-
+import Cart from "../pages/Cart";
+import AdminProduct from "../pages/Admin/AdminProduct";
 function AllRoutes(){
     return (
         <Switch>

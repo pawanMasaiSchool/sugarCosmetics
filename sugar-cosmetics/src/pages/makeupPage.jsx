@@ -4,14 +4,16 @@ import {ItemContainer} from "../component/allStyleComponent/carouselWrapper"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { FilterSort } from "../component/allStyleComponent/filter-sort-component";
 import "../component/allStyleComponent/home.css"
-import { useSelector } from "react-redux";
-const CreateCard=({id,itemName,image,price,routes})=>
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../Redux/Cart/actions";
+const CreateCard=({id,itemName,image,price,routes,item,handleAddToCart})=>
 {
   const history=useHistory()
  const handleViewProduct=(routes)=>{
     
    history.push(routes)
  }
+ 
   return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px" >
 
                 <Paper className="box-item" sx={{cursor:"pointer",height:"400px"}}>
@@ -30,7 +32,7 @@ const CreateCard=({id,itemName,image,price,routes})=>
                       <div className="wishlist">
                       <FavoriteBorderIcon sx={{paddingTop:'0.2rem'}}/>
                       </div>
-                      <div className="chooseProduct">
+                      <div className="chooseProduct" onClick={()=>handleAddToCart(item)}>
                         Add to cart
                       </div>
                     </div>
@@ -39,9 +41,12 @@ const CreateCard=({id,itemName,image,price,routes})=>
 }
 
 export default function MakeupPage(){
-    const arr=new Array(20).fill(0)
+
+    const dispatch = useDispatch()
     const {isLoading, isError, datas}=useSelector(state=>state.appData)
-    
+  const  handleAddToCart=(item)=>{
+  dispatch(addToCart(item))
+  }  
     
    
     return <div className="Home" style={{backgroundColor:"#f5"}}>
@@ -51,7 +56,7 @@ export default function MakeupPage(){
          <Grid container spacing={1} sx={{width:"85%", margin:"1rem auto"}}>
 
     
-    {datas.map((item, i) =><Grid sx={{margin:"1rem 0"}} item lg={3}><CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}/></Grid>)}
+    {datas.map((item, i) =><Grid sx={{margin:"1rem 0"}} item lg={3}><CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}product={item} handleAddToCart={handleAddToCart}/></Grid>)}
 
 </Grid>
     </div>
