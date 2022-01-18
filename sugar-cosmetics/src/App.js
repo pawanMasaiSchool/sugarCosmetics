@@ -6,6 +6,10 @@ import { Footer } from "./Components/Footer/Footer";
 import { Header } from "./Components/Header/Header";
 import "./styles.css";
 import { addToCart } from "./Redux/Cart/actions";
+import AdminCreateProduct from "./Pages/AdminCreateProduct";
+import AdminShowOrders from "./Pages/AdminShowOrders";
+import AdminLogin from "./Pages/AdminLogin";
+import AdminNavbar from "./Components/AdminNavbar";
 
 
 
@@ -24,7 +28,6 @@ export default function App() {
       <Header />
       <AllRoutes />
       <Footer />
-     
     </div>
   );
 }
