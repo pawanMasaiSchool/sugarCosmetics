@@ -45,8 +45,8 @@ export default function MakeupPage(){
     const dispatch = useDispatch()
     const {isLoading, isError, datas}=useSelector(state=>state.appData)
   const  handleAddToCart=(item)=>{
-    console.log('make')
-    console.log(item)
+
+    
   dispatch(addToCart(item))
   }  
     
