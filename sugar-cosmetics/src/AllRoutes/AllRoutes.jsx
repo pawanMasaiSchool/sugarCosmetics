@@ -1,24 +1,18 @@
 import { Route,Switch } from "react-router-dom";
 import Box from '@mui/material/Box';
-import MakeupPage from "../pages/makeupPage";
+import MakeupPage from "../Pages/makeupPage"
 import { Home } from "@mui/icons-material";
-import { ProductDetails } from "../pages/productPage";
-import HomePage from "../pages/landingPage";
-import Cart from "../pages/Cart";
-import AdminProduct from "../pages/Admin/AdminProduct";
-import Cart from "../Pages/Cart"
+import HomePage from "../Pages/landingPage";
+import Cart from "../Pages/Cart";
+import AdminProduct from "../Pages/Admin/AdminProduct";
 import Checkout from "../Pages/Checkout"
 import Payments from "../Pages/Payments"
-<<<<<<< HEAD
-import MakeupPage from "../Pages/makeupPage";
-import HomePage from "../Pages/landingPage";
-
-=======
+import AdminNavbar from "../Components/AdminNavbar";
 import AdminLogin from "../Pages/AdminLogin";
 import AdminShowOrders from "../Pages/AdminShowOrders";
 import AdminCreateProduct from "../Pages/AdminCreateProduct";
-import AdminNavbar from "../Components/AdminNavbar";
->>>>>>> ea42834c0fd74eb4d0bf11fb224d185f1fa09f00
+import { ProductDetails } from "../Pages/productPage";
+
 function AllRoutes(){
     return (
         <Switch>
@@ -27,14 +21,9 @@ function AllRoutes(){
                     <HomePage />
                 </Box>
             </Route>
-<<<<<<< HEAD
 
             <Route exact path="/makeup">
                 <MakeupPage />
-=======
-            <Route exact path="/makeup">
-            <MakeupPage />
->>>>>>> ea42834c0fd74eb4d0bf11fb224d185f1fa09f00
             </Route>
 
             <Route exact path="/brushes">
@@ -61,6 +50,8 @@ function AllRoutes(){
                     <br/><br/><br/><br/><br/><br/><br/><br/>
                 </Box>
             </Route>
+            <Route exact path="/products/:url"><ProductDetails/></Route>
+
             <Route exact path="/offers">
                 <Box sx={{position:"relative", top:"100px"}}>
                     <h1>Offers</h1>
@@ -83,7 +74,7 @@ function AllRoutes(){
                 <Payments />
             </Route>
             <Route exact path="/admin">
-                <AdminNavbar />
+            <AdminNavbar />
                 <AdminLogin />
             </Route>
             <Route exact path="/admin/orders">
@@ -96,7 +87,7 @@ function AllRoutes(){
             </Route>
             <Route exact path="/admin/delete">
                 <AdminNavbar />
-                <h1>Delete Product</h1>
+                <AdminProduct />
             </Route>
             <Route>
                 <Box sx={{position:"relative", top:"100px"}}>

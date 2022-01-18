@@ -23,7 +23,7 @@ const Cart = () => {
     const cartTotal = useSelector(state => state.cart.cartTotal)
 
     return (
-        <CartBox style={{padding: "5px 10px"}}>
+        <CartBox style={{padding: "5px 10px", marginTop:"96px", marginBottom:"24px"}}>
             {/* Left */}
             <CartBoxDiv  style={{marginTop:"12px"}}>
                 <FlexDiv align="center" justify="space-between">
