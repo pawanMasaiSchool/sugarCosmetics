@@ -40,6 +40,7 @@ export const WrapperItem = styled.div`
       display: block;
     }
   }
+ 
 `;
 
 export const WrapperItem2 = styled.div`
@@ -127,6 +128,8 @@ width: ${props=>props.width};
 }
 > * .cartProduct{
 visibility:hidden;
+position:absolute;
+bottom:0px;
 
 }
 > * .wishlist{
@@ -169,10 +172,12 @@ export const WrapperItem3 = styled.div`
   }
   > * .rec.rec-arrow:nth-of-type(1){
     left:2%;
+    
 
   }
   > * .rec.rec-arrow:nth-of-type(2){
 left:94%;
+
   }
 `;
 

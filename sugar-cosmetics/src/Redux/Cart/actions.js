@@ -84,3 +84,4 @@ export const placeOrder = (totalItems, cartTotal, cart) => async (dispatch) => {
 
     alert("Order Placed")
 }
+

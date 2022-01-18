@@ -6,11 +6,23 @@ import {fetchData} from "../Redux/AppData/api";
 import Carousel from "react-elastic-carousel";
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { TopItemWrapper, Item, ItemContainer, WrapperItem, WrapperItem2, WrapperItem3 } from '../component/allStyleComponent/carouselWrapper';
-
-
-
 import "../component/allStyleComponent/home.css"
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
+const arr=[
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/32c61505-8646-48af-9c13-a45e4e62a8d6.jpg',
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/58454d95-bbd2-44bc-9708-b7475fb46ec6.jpg',
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/a38c00f3-d992-442b-bcca-0e80a141633a.jpg',
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/fdd1bec3-10c0-429e-b907-368ac24912b3.jpg',
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1bdaed33-e68e-4cc3-999f-3e0f8ed38bba.jpg',
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/2011100a-ae34-467e-b1a0-b62363ccc806.jpg',
+  'https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/58454d95-bbd2-44bc-9708-b7475fb46ec6.jpg'
+
+
+]
+
+
+
 
 const breakPoints = [
   { width: 650, itemsToShow: 3, itemsToScroll: 3 },
@@ -48,7 +60,7 @@ const CreateCard=({id,itemName,image,price,routes})=>
 
 const ItemDetails = ({ datas }) => {
   const [index, setIndex] = useState(0)
-  const arr = new Array(12).fill(0)
+  
   return (
     <>
       <WrapperItem>
@@ -59,6 +71,12 @@ const ItemDetails = ({ datas }) => {
             </Item>
             <Item>
               <img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/90cd6fb8-82b4-4711-9662-7f54e770866e.jpg" />
+            </Item>
+            <Item>
+              <img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/6ac70470-479e-45ae-9788-54154c08dd66.jpg" />
+            </Item>
+            <Item>
+              <img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/adca82dc-ff8b-4ab4-aa4a-98a55dff5251.jpg" />
             </Item>
           </Carousel>
         </div>
@@ -86,11 +104,11 @@ const ItemDetails = ({ datas }) => {
             <Carousel breakPoints={breakPoints2} pagination={false}>
 
 
-              {arr.map((_, i) => <ItemContainer width="100%" imageWidth="100%" left="0px" imageHeight="100%" imagePadding="0" margin="1rem">
+              {arr.map((item, i) => <ItemContainer width="100%" imageWidth="100%" left="0px" imageHeight="100%" imagePadding="0" margin="1rem">
 
                 <div className="box-item">
                   <div>
-                    <img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/32c61505-8646-48af-9c13-a45e4e62a8d6.jpg" />
+                    <img src={item} />
 
                   </div>
 

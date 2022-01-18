@@ -12,7 +12,6 @@ import AdminLogin from "./Pages/AdminLogin";
 import AdminNavbar from "./Components/AdminNavbar";
 
 
-
 export default function App() {
   
   const dispatch = useDispatch();  
@@ -28,6 +27,7 @@ export default function App() {
       <Header />
       <AllRoutes />
       <Footer />
+      {/* <AdminProduct /> */}
     </div>
   );
 }

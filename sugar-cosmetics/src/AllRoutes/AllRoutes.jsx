@@ -1,5 +1,11 @@
 import { Route,Switch } from "react-router-dom";
 import Box from '@mui/material/Box';
+import MakeupPage from "../pages/makeupPage";
+import { Home } from "@mui/icons-material";
+import { ProductDetails } from "../pages/productPage";
+import HomePage from "../pages/landingPage";
+import Cart from "../pages/Cart";
+import AdminProduct from "../pages/Admin/AdminProduct";
 import Cart from "../Pages/Cart"
 import Checkout from "../Pages/Checkout"
 import Payments from "../Pages/Payments"
@@ -7,8 +13,6 @@ import AdminLogin from "../Pages/AdminLogin";
 import AdminShowOrders from "../Pages/AdminShowOrders";
 import AdminCreateProduct from "../Pages/AdminCreateProduct";
 import AdminNavbar from "../Components/AdminNavbar";
-import MakeupPage from "../Pages/makeupPage"
-
 function AllRoutes(){
     return (
         <Switch>

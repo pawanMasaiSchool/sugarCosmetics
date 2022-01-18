@@ -6,7 +6,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import Tooltip from '@mui/material/Tooltip';
 
 
+
 const SearchBar = () =>{
+    
     return (
         <Box 
         sx={{background:"#F8F9FA", 

@@ -6,6 +6,7 @@ import adminReducer from './Admin/reducer';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { appReducer } from './AppData/reducer';
+import { deleteStoreReducer } from './Admin/DeleteProduct/reducer';
 
 
 const rootReducer = combineReducers({
@@ -13,8 +14,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   appData:appReducer,
   products: productReducer,
+  deleteApi:deleteStoreReducer,
   admin: adminReducer
-
 })
 
 const composed = composeWithDevTools(applyMiddleware(thunk))

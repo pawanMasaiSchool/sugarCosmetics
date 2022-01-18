@@ -57,9 +57,11 @@ const handleResetButton=()=>{
             }}
         >
             <Box onMouseLeave={handlePopoverClose}>
+                
                 <div style={{textAlign:'right'}}>
                     <div className={styles.clearFilter} onClick={handleResetButton}>clear filter</div>
                 </div>
+                <div style={{textAlign:'center',marginTop:'0.54rem',textDecoration:"underline"}}><strong>Product Category</strong></div>
                 <FormGroup sx={{ padding: "1rem" }}>
                     <FormControlLabel control={<Checkbox value="face makeup" checked={state['face makeup']}  onChange={(e)=>handleChange(e)}/>} label="face makeup" />
                     <FormControlLabel control={<Checkbox value="lip makeup" checked={state['lip makeup']}  onChange={(e)=>handleChange(e)}/>} label="lip makeup" />
@@ -108,7 +110,7 @@ const SortContainerEvent = ({handlePriceSort}) => {
             }}
         >
             <Box onMouseLeave={handlePopoverClose}>
-                <MenuItem sx={{ padding: "0.5rem 1.8rem", width: "100%", '&hover': { backgroundColor: 'black' },backgroundColor:state=='0'?'black':'white',color:state=='0'?'white':'#000000' }} onClick={()=>{handlePriceSort(0)
+                <MenuItem sx={{ padding: "0.5rem 1.8rem", width: "100%",backgroundColor:state=='0'?'black':'white',color:state=='0'?'white':'#000000' }} onClick={()=>{handlePriceSort(0)
                 setState(0)
                 handlePopoverClose()
                 }}><Button sx={{color:state=='0'?'white':'#000000'}}startIcon={<CompareArrows sx={{transform:'rotate(90deg)'}}/>}>Relevance</Button></MenuItem>

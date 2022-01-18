@@ -14,6 +14,7 @@ import { getDataRequest } from "../Redux/AppData/action";
 import { fetchData } from "../Redux/AppData/api";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import { addToCart } from "../Redux/Cart/actions";
 const breakPoints = [
     { width: 650, itemsToShow: 3, itemsToScroll: 3 },
     { width: 1000, itemsToShow: 3, itemsToScroll: 3 }
@@ -95,6 +96,10 @@ export function ProductDetails() {
 
 
     }, [url])
+    const handleAddToCart=(datas)=>{
+        alert('1 product is added')
+        dispatch(addToCart(datas))
+        }
     let rating = parseInt(datas[0]?.ratingValue?.trim())
     const roundRating = Number(datas[0]?.ratingValue?.trim())
 
@@ -164,7 +169,7 @@ export function ProductDetails() {
                             </Box>
                             <TopItemWrapper fontSize="18px" color="#6c757d" fontWeight="400" margin="0.6rem"><div>₹ {datas[0]?.price}</div></TopItemWrapper>
                             <Box sx={{ marginTop: "0.8rem" }}>
-                                <Button startIcon={<LocalMallIcon />} variant="contained" sx={{ backgroundColor: "#1C1F23", width: "50%", fontSize: "16px", fontWeight: "400", fontStyle: "normal" }}>Add to cart</Button>
+                                <Button startIcon={<LocalMallIcon />} variant="contained" sx={{ backgroundColor: "#1C1F23", width: "50%", fontSize: "16px", fontWeight: "400", fontStyle: "normal" }} onClick={()=>handleAddToCart(datas)}>Add to cart</Button>
                             </Box>
                             <Box sx={{ display: "flex", gap: "0.8rem", marginTop: "1.4rem", cursor: "pointer" }} onClick={() => setWishlist(!wishlist)}>
                                 {wishlist ? <FavoriteBorderIcon sx={{ fontSize: "14px", marginTop: "0.3rem" }} /> : <FavoriteIcon sx={{ fontSize: "14px", marginTop: "0.3rem" }} />}
