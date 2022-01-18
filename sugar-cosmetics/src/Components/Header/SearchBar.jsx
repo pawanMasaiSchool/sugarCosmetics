@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 
 
+
 const SearchBar = () =>{
     const ref = useRef();
     const cartCount = useSelector(state=>state.cart.cartQuantity);

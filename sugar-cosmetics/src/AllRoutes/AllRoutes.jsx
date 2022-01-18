@@ -1,11 +1,24 @@
 import { Route,Switch } from "react-router-dom";
 import Box from '@mui/material/Box';
+import MakeupPage from "../pages/makeupPage";
+import { Home } from "@mui/icons-material";
+import { ProductDetails } from "../pages/productPage";
+import HomePage from "../pages/landingPage";
+import Cart from "../pages/Cart";
+import AdminProduct from "../pages/Admin/AdminProduct";
 import Cart from "../Pages/Cart"
 import Checkout from "../Pages/Checkout"
 import Payments from "../Pages/Payments"
+<<<<<<< HEAD
 import MakeupPage from "../Pages/makeupPage";
 import HomePage from "../Pages/landingPage";
 
+=======
+import AdminLogin from "../Pages/AdminLogin";
+import AdminShowOrders from "../Pages/AdminShowOrders";
+import AdminCreateProduct from "../Pages/AdminCreateProduct";
+import AdminNavbar from "../Components/AdminNavbar";
+>>>>>>> ea42834c0fd74eb4d0bf11fb224d185f1fa09f00
 function AllRoutes(){
     return (
         <Switch>
@@ -14,9 +27,14 @@ function AllRoutes(){
                     <HomePage />
                 </Box>
             </Route>
+<<<<<<< HEAD
 
             <Route exact path="/makeup">
                 <MakeupPage />
+=======
+            <Route exact path="/makeup">
+            <MakeupPage />
+>>>>>>> ea42834c0fd74eb4d0bf11fb224d185f1fa09f00
             </Route>
 
             <Route exact path="/brushes">
@@ -63,6 +81,22 @@ function AllRoutes(){
             </Route>
             <Route exact path="/payments">
                 <Payments />
+            </Route>
+            <Route exact path="/admin">
+                <AdminNavbar />
+                <AdminLogin />
+            </Route>
+            <Route exact path="/admin/orders">
+                <AdminNavbar />
+                <AdminShowOrders />
+            </Route>
+            <Route exact path="/admin/create">
+                <AdminNavbar />
+                <AdminCreateProduct />
+            </Route>
+            <Route exact path="/admin/delete">
+                <AdminNavbar />
+                <h1>Delete Product</h1>
             </Route>
             <Route>
                 <Box sx={{position:"relative", top:"100px"}}>
