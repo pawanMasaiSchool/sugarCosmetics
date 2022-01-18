@@ -3,6 +3,11 @@ import Box from '@mui/material/Box';
 import Cart from "../Pages/Cart"
 import Checkout from "../Pages/Checkout"
 import Payments from "../Pages/Payments"
+import AdminLogin from "../Pages/AdminLogin";
+import AdminShowOrders from "../Pages/AdminShowOrders";
+import AdminCreateProduct from "../Pages/AdminCreateProduct";
+import AdminNavbar from "../Components/AdminNavbar";
+import MakeupPage from "../Pages/makeupPage"
 
 function AllRoutes(){
     return (
@@ -10,7 +15,8 @@ function AllRoutes(){
             <Route exact path="/">
                 <Box sx={{position:"relative", top:"100px"}}><h1>Home</h1></Box>
             </Route>
-            <Route exact path="/makeup"><MakeupPage />
+            <Route exact path="/makeup">
+            <MakeupPage />
             </Route>
             <Route exact path="/brushes">
                 <Box sx={{position:"relative", top:"100px"}}><h1>Brushes</h1></Box>
@@ -38,6 +44,22 @@ function AllRoutes(){
             </Route>
             <Route exact path="/payments">
                 <Payments />
+            </Route>
+            <Route exact path="/admin">
+                <AdminNavbar />
+                <AdminLogin />
+            </Route>
+            <Route exact path="/admin/orders">
+                <AdminNavbar />
+                <AdminShowOrders />
+            </Route>
+            <Route exact path="/admin/create">
+                <AdminNavbar />
+                <AdminCreateProduct />
+            </Route>
+            <Route exact path="/admin/delete">
+                <AdminNavbar />
+                <h1>Delete Product</h1>
             </Route>
             <Route>
                 <Box sx={{position:"relative", top:"100px"}}><h1>Page not found</h1></Box>
