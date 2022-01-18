@@ -6,7 +6,7 @@ import { FilterSort } from "../component/allStyleComponent/filter-sort-component
 import "../component/allStyleComponent/home.css"
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Cart/actions";
-const CreateCard=({id,itemName,image,price,routes,item,handleAddToCart})=>
+const CreateCard=({id,itemName,image,price,routes,product,handleAddToCart})=>
 {
   const history=useHistory()
  const handleViewProduct=(routes)=>{
@@ -32,7 +32,7 @@ const CreateCard=({id,itemName,image,price,routes,item,handleAddToCart})=>
                       <div className="wishlist">
                       <FavoriteBorderIcon sx={{paddingTop:'0.2rem'}}/>
                       </div>
-                      <div className="chooseProduct" onClick={()=>handleAddToCart(item)}>
+                      <div className="chooseProduct" onClick={()=>handleAddToCart(product)}>
                         Add to cart
                       </div>
                     </div>
@@ -45,6 +45,8 @@ export default function MakeupPage(){
     const dispatch = useDispatch()
     const {isLoading, isError, datas}=useSelector(state=>state.appData)
   const  handleAddToCart=(item)=>{
+    console.log('make')
+    console.log(item)
   dispatch(addToCart(item))
   }  
     
