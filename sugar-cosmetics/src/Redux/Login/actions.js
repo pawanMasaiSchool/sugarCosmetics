@@ -5,3 +5,15 @@ export const actionConstants = {
 }
 
 // action creators
+
+const LoginSuccess = (id) => {
+    return ({
+        type:actionConstants.LOGIN_USER_SUCCESS,
+        payload:{
+            isAuth:true,
+            id:id
+        }
+    })
+}
+
+export {LoginSuccess}

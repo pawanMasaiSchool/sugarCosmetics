@@ -14,6 +14,7 @@ import PaymentsIcon from '@mui/icons-material/Payments';
 import { calculateTotal } from '../Utils/utilFunctions';
 import CartPriceBreakdownWithPaddingLeft from '../Components/CartPriceBreakdownWithPaddingLeft';
 import GiftCard from '../Components/GiftCard';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -57,8 +58,8 @@ const Cart = () => {
                         <CartPriceBreakdownWithPaddingLeft />
 
                         <FlexDiv style={{marginTop:"22px"}}>
-                            <button className={styles.continueShopping}> {"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Continue Shopping</span></button>
-                            <button className={styles.deliveryInfo}>Delivery Information</button>
+                            <Link to="/"><button className={styles.continueShopping}> {"<"} <span style={{textDecoration:"underline", paddingLeft:"0.25rem", paddingRight:"0.25rem"}}>Continue Shopping</span></button></Link>
+                            <button className={styles.deliveryInfo}><Link style={{textDecoration:"none", color:"inherit"}} to="/checkout">Delivery Information</Link></button>
                         </FlexDiv>
                     </FlexDiv>
 

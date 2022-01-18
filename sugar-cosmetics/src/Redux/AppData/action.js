@@ -26,3 +26,18 @@ export const getDataFailure=()=>(
         
     }}
 )
+
+export const priceLowToHigh=()=>({
+    type:actionConstraint.SORT_PRICE_LOW,
+    payload:{
+        isLoading:false,
+        isError:false
+    }
+})
+export const priceHighToLow=()=>({
+    type:actionConstraint.SORT_PRICE_HIGH,
+    payload:{
+        isLoading:false,
+        isError:false
+    }
+})

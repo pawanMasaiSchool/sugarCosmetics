@@ -32,7 +32,7 @@ const CreateCard=({id,itemName,image,price,routes})=>
  }
   return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px" onClick={()=>handleViewProduct(routes)}>
 
-                <Paper className="box-item">
+                <Paper className="box-item" sx={{cursor:"pointer"}}>
                   <div>
                     <img src={image} />
 
@@ -136,7 +136,7 @@ const ItemDetails = ({ datas }) => {
             <Carousel breakPoints={breakPoints} pagination={false}>
 
 
-              {datas.map((item, i) => item.category == "brush" && item.name.length < 40 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]}/>)}
+              {datas.map((item, i) => item.category == "brush" && item.name.length < 40 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}/>)}
 
 
             </Carousel>
@@ -171,7 +171,7 @@ const ItemDetails = ({ datas }) => {
             <Carousel breakPoints={breakPoints} pagination={false}>
 
 
-              {datas.map((item, i) => item.category == "lip makeup" && item.name.length < 38 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]}/>)}
+              {datas.map((item, i) => item.category == "lip makeup" && item.name.length < 38 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}/>)}
 
 
             </Carousel>
@@ -202,7 +202,7 @@ const ItemDetails = ({ datas }) => {
             <Carousel breakPoints={breakPoints} pagination={false}>
 
 
-              {datas.map((item, i) => i < 20 && item.name.length < 38 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]}/>)}
+              {datas.map((item, i) => i < 20 && item.name.length < 38 && <CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route}/>)}
 
 
             </Carousel>
@@ -240,7 +240,7 @@ const ItemDetails = ({ datas }) => {
 
 
 
-export default function Home() {
+export default function HomePage() {
   const { isLoading, isError, datas } = useSelector(state => state.appData,shallowEqual)
 console.log(isLoading,isError)
   const dispatch = useDispatch()
@@ -256,8 +256,6 @@ console.log(isLoading,isError)
     }</div>
   }
   return <div className='Home'>
-    {/* <Header /> */}
     <ItemDetails datas={datas} />
-    {/* <Footer/> */}
   </div>
 }

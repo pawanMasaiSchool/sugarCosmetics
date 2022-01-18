@@ -9,10 +9,15 @@ import TextField from '@mui/material/TextField';
 import { useState } from "react";
 import axios from "axios";
 import {v4 as uuid} from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import { LoginSuccess } from "../../Redux/Login/actions";
 
 
 
 const RegisterPage = () =>{
+    const isAuth = useSelector(state=>state.login.isAuth);
+    const dispatch = useDispatch();
+
     const [registeration, setRegisteration] = useState("incomplete");
     const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
@@ -33,8 +38,13 @@ const RegisterPage = () =>{
             lastName:lName,
             email:email
         }
-        await PostUserDetails(payload)
+        await PostUserDetails(payload);
+        updateStoreLogin(payload.id);
         setRegisteration("complete")
+    }
+    const updateStoreLogin = (id) =>{
+        const loginAction = LoginSuccess(id);
+        dispatch(loginAction);
     }
     if(registeration === "complete"){
         window.location.assign("http://localhost:3000/")

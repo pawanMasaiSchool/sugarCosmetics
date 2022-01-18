@@ -13,6 +13,11 @@ import RegisterPage from "./RegisterPage";
 
 const LoginPage = () =>{
     const [currentPage,setCurrentPage] = useState("Login");
+
+    const handleRequestOTP = () =>{
+        alert("OTP: 5974")
+    }
+
     const goToRegiter = () =>{
         setCurrentPage("Register")
     }
@@ -58,7 +63,7 @@ const LoginPage = () =>{
                     fontSize:"25px", 
                     padding:"22px 8px 0px 0px"}}>+91</p>
                     <PinInput noOfBoxes={10} length={1} />
-                    <Button sx={{
+                    <Button onClick={handleRequestOTP} sx={{
                         cursor:"pointer",
                         backgroundColor:"#333333",
                         color:"#ffffff",

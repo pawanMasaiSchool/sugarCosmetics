@@ -14,7 +14,7 @@ const Header = () => {
         <Box sx={{fontFamily:"sans-serif"}}>
             {/* {free && <Box><FreeOffer handleClick={handleClick} /></Box>} */}
             <Box><SearchBar /></Box><br/><br/><br/><br/>
-            <Box><Navbar /></Box><br/><br/><br/><br/><br/><br/>
+            <Box><Navbar /></Box>
         </Box>
     )
 }

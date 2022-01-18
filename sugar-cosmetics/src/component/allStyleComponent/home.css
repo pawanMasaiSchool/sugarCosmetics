@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   width:100%;
-  background-color: #F5F5F5;
+  background-color: hsl(0, 0%, 96%);
   min-height: 100vh;
 }
 *{
