@@ -110,10 +110,12 @@ const SearchBar = () =>{
                         <FavoriteIcon sx={{cursor:"pointer", width:"20px", height:"20px",}} />
                     </Tooltip>
                     <Tooltip title="Cart" placement='top-start'>
+                        <Link to="/cart">
                         <Box>
                             {(cartCount === 0) ? (<p></p>) : (<p style={{fontSize:"14px", float:"right", position:"relative",right:"2px", bottom:"8px"}}>{cartCount}</p>)}
                             <LocalMallIcon sx={{cursor:"pointer", width:"20px", height:"20px",}} />
                         </Box>
+                        </Link>
                         
                     </Tooltip>
                     <img src='https://static.thenounproject.com/png/170070-200.png' 
