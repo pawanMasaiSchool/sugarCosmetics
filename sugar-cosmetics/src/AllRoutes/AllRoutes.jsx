@@ -12,7 +12,6 @@ import AdminLogin from "../Pages/AdminLogin";
 import AdminShowOrders from "../Pages/AdminShowOrders";
 import AdminCreateProduct from "../Pages/AdminCreateProduct";
 import AdminNavbar from "../Components/AdminNavbar";
-import SearchPage from "../Pages/SearchResults";
 
 
 function AllRoutes(){
@@ -61,6 +60,8 @@ function AllRoutes(){
                     <br/><br/><br/><br/><br/><br/><br/><br/>
                 </Box>
             </Route>
+            <Route exact path="/products/:url"><ProductDetails/></Route>
+
             <Route exact path="/offers">
                 <Box sx={{position:"relative", top:"100px"}}>
                     <h1>Offers</h1>
@@ -83,7 +84,7 @@ function AllRoutes(){
                 <Payments />
             </Route>
             <Route exact path="/admin">
-                <AdminNavbar />
+            <AdminNavbar />
                 <AdminLogin />
             </Route>
             <Route exact path="/admin/orders">
@@ -96,7 +97,7 @@ function AllRoutes(){
             </Route>
             <Route exact path="/admin/delete">
                 <AdminNavbar />
-                <h1>Delete Product</h1>
+                <AdminProduct />
             </Route>
             <Route>
                 <Box sx={{position:"relative", top:"100px"}}>

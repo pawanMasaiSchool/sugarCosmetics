@@ -80,6 +80,7 @@ export function ProductDetails() {
     const { url } = useParams()
     const history=useHistory()
     console.log(url, 'url')
+    // console.log(id)
     const imgRef = useRef(null)
     const [wishlist, setWishlist] = useState(true)
     const arr = new Array(20).fill(0)
@@ -89,16 +90,13 @@ export function ProductDetails() {
     const dispatch = useDispatch()
     const { isLoading, isError, datas, isProductFound } = useSelector(state => state.appData)
     useEffect(() => {
-        let query = '?route=/products/' + url
-
+        let query = 'route=/products/' + url
         dispatch(fetchData(query))
-
-
 
     }, [url])
     const handleAddToCart=(datas)=>{
-        alert('1 product is added')
-        dispatch(addToCart(datas))
+        console.log(datas[0])
+        dispatch(addToCart(datas[0]))
         }
     let rating = parseInt(datas[0]?.ratingValue?.trim())
     const roundRating = Number(datas[0]?.ratingValue?.trim())

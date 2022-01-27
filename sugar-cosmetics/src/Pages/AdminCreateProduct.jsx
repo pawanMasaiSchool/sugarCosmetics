@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import CreateProductForm from "../Components/CreateProductForm"
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import AdminNavbar from '../Components/AdminNavbar';
 
 
 const AdminCreateProduct = () => {
@@ -18,7 +19,8 @@ const AdminCreateProduct = () => {
 
     return (
         
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" style={{marginTop:"96px"}}>
+            <AdminNavbar />
             <Box  sx={{padding:"1rem" }}>
                 {isSuccess && <h4 style={{color:"green"}}>Product Added!</h4>}
                 <Typography variant="h3">Create Product</Typography>

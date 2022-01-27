@@ -45,7 +45,7 @@ const Payments = () => {
     const dispatch = useDispatch()
 
     return (
-        <CartBox>
+        <CartBox style={{marginTop:"96px", marginBottom:"24px"}}>
             {/* Left */}
             <CartBoxDiv style={{paddingLeft:"0px", marginTop:"12px"}}>
                 {/* Price Details Div */}

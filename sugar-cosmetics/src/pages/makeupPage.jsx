@@ -51,7 +51,8 @@ export default function MakeupPage(){
   }  
     
    
-    return <div className="Home" style={{backgroundColor:"#f5",margin:"80px 0px"}}>
+    return <div className="Home" style={{backgroundColor:"#f5", marginTop:"98px"}}>
+
       <div className='top-heading-filter'>
         <FilterSort />
       </div>

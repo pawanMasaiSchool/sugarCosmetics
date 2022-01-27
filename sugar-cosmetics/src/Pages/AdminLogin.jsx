@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import AdminLoginForm from '../Components/AdminLoginForm';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import AdminNavbar from '../Components/AdminNavbar';
 
 const AdminLogin = () => {
     const isAuth = useSelector(state => state.admin.isAuth);
@@ -16,7 +16,8 @@ const AdminLogin = () => {
     }
 
     return (
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" style={{marginTop:"96px"}}>
+            <AdminNavbar />
             <Box  sx={{padding:"1rem" }}>
                 <Typography variant="h3">Login</Typography>
                 <AdminLoginForm />

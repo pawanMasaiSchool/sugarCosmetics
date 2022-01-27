@@ -17,7 +17,7 @@ const Checkout = () => {
     const cart = useSelector(state => state.cart.cart)
 
     return (
-        <CartBox>
+        <CartBox style={{marginTop:"96px", marginBottom:"24px"}}>
             {/* Left */}
             <CartBoxDiv style={{paddingLeft:"0px", marginTop:"12px"}}>
                 {/* Price Details Div */}
