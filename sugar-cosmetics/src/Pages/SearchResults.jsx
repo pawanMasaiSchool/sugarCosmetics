@@ -1,12 +1,14 @@
 import { Grid, Paper } from "@mui/material"
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import {ItemContainer} from "../component/allStyleComponent/carouselWrapper"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { FilterSort } from "../component/allStyleComponent/filter-sort-component";
 import "../component/allStyleComponent/home.css"
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Cart/actions";
-const CreateCard=({id,itemName,image,price,routes,product,handleAddToCart})=>
+import { useEffect } from "react";
+import { fetchData } from "../Redux/AppData/api";
+const CreateCard=({id,itemName,image,price,routes,item,handleAddToCart})=>
 {
   const history=useHistory()
  const handleViewProduct=(routes)=>{
@@ -32,7 +34,7 @@ const CreateCard=({id,itemName,image,price,routes,product,handleAddToCart})=>
                       <div className="wishlist">
                       <FavoriteBorderIcon sx={{paddingTop:'0.2rem'}}/>
                       </div>
-                      <div className="chooseProduct" onClick={()=>handleAddToCart(product)}>
+                      <div className="chooseProduct" onClick={()=>handleAddToCart(item)}>
                         Add to cart
                       </div>
                     </div>
@@ -40,19 +42,23 @@ const CreateCard=({id,itemName,image,price,routes,product,handleAddToCart})=>
                 </ItemContainer>)
 }
 
-export default function MakeupPage(){
-
-    const dispatch = useDispatch()
-    const {isLoading, isError, datas}=useSelector(state=>state.appData)
-  const  handleAddToCart=(item)=>{
+export default function SearchPage(){
 
     
-  dispatch(addToCart(item))
-  }  
+    const dispatch = useDispatch();
+    const {query} = useParams();
+    const {isLoading, isError, datas}=useSelector(state=>state.appData)
+    const  handleAddToCart=(item)=>{
+    dispatch(addToCart(item))
+    }  
+
+    useEffect(()=>{
+        let q = `q=` + query;
+        dispatch(fetchData(q))
+    },[query])
     
    
-    return <div className="Home" style={{backgroundColor:"#f5", marginTop:"98px"}}>
-
+    return <div className="Home" style={{backgroundColor:"#f5"}}>
       <div className='top-heading-filter'>
         <FilterSort />
       </div>

@@ -1,17 +1,18 @@
 import { Route,Switch } from "react-router-dom";
 import Box from '@mui/material/Box';
-import MakeupPage from "../Pages/makeupPage"
+import MakeupPage from "../Pages/makeupPage";
 import { Home } from "@mui/icons-material";
+import { ProductDetails } from "../Pages/productPage";
 import HomePage from "../Pages/landingPage";
-import Cart from "../Pages/Cart";
 import AdminProduct from "../Pages/Admin/AdminProduct";
+import Cart from "../Pages/Cart"
 import Checkout from "../Pages/Checkout"
 import Payments from "../Pages/Payments"
-import AdminNavbar from "../Components/AdminNavbar";
 import AdminLogin from "../Pages/AdminLogin";
 import AdminShowOrders from "../Pages/AdminShowOrders";
 import AdminCreateProduct from "../Pages/AdminCreateProduct";
-import { ProductDetails } from "../Pages/productPage";
+import AdminNavbar from "../Components/AdminNavbar";
+
 
 function AllRoutes(){
     return (
@@ -25,6 +26,15 @@ function AllRoutes(){
             <Route exact path="/makeup">
                 <MakeupPage />
             </Route>
+
+
+
+            <Route exact path="/search/:query" >
+                <SearchPage />
+            </Route>
+
+
+
 
             <Route exact path="/brushes">
                 <Box sx={{position:"relative", top:"100px"}}>

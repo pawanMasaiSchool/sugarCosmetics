@@ -1,7 +1,7 @@
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Box from '@mui/material/Box';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import PersonIcon from '@mui/icons-material/Person';
 import Tooltip from '@mui/material/Tooltip';
 import TemporaryDrawer from './myDrawer';
@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from 'react';
 
 
 const SearchBar = () =>{
+    const [inp, setInp] = useState("");
     const ref = useRef();
     const cartCount = useSelector(state=>state.cart.cartQuantity);
     const isAuth = useSelector(state=>state.login.isAuth);
@@ -26,6 +27,15 @@ const SearchBar = () =>{
         const name = res.data.firstName;
         ref.current = name;
     }
+
+    const history = useHistory()
+
+    const handleSearch = async () =>{
+        history.push("/search/"+inp);
+        setInp("");
+    }
+
+
     useEffect(async ()=>{
         await getUserName();
         setNameFetched(ref.current);
@@ -56,6 +66,8 @@ const SearchBar = () =>{
             </Link>
             <Box sx={{width:"50%", display:"flex", flexDirection:"row", padding:"2px"}}>
                 <input placeholder='Try "Liquid Lipstick"' 
+                    value={inp}
+                    onChange={e=>setInp(e.target.value)}
                     style={{width:"92%", 
                             border:"0px solid white", 
                             padding:"8px 12px 8px 22px",
@@ -63,7 +75,8 @@ const SearchBar = () =>{
                             borderWidth:"0px", 
                             background:"#ffffff", 
                             borderRadius:"35px 0px 0px 35px"}} />
-                <button style={{background:"#000000", 
+                <button onClick={handleSearch}
+                style={{background:"#000000", 
                                 color:"#FFFFFF",
                                 cursor:"pointer",
                                 borderWidth:"0px",
@@ -101,7 +114,7 @@ const SearchBar = () =>{
                         
                             {(cartCount === 0) ? (<p></p>) : (<p style={{fontSize:"14px", float:"right", position:"relative",right:"2px", bottom:"8px"}}>{cartCount}</p>)}
                             <LocalMallIcon sx={{cursor:"pointer", width:"20px", height:"20px",}} />
-                        
+
                         </Link>
                         
                     </Tooltip>

@@ -7,7 +7,6 @@ import { Header } from "./Components/Header/Header";
 import "./styles.css";
 import TemporaryDrawer from "./Components/Header/myDrawer";
 
-
 export default function App() {
   
   const dispatch = useDispatch();  
