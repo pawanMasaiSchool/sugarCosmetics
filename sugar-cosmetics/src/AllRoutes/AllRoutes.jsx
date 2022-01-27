@@ -28,7 +28,9 @@ function AllRoutes(){
                 <MakeupPage />
             </Route>
 
-
+            <Route exact path="/products/:url">
+                <ProductDetails />
+            </Route>
 
             <Route exact path="/search/:query" >
                 <SearchPage />

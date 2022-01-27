@@ -89,7 +89,7 @@ export function ProductDetails() {
     const dispatch = useDispatch()
     const { isLoading, isError, datas, isProductFound } = useSelector(state => state.appData)
     useEffect(() => {
-        let query = '?route=/products/' + url
+        let query = 'route=/products/' + url
 
         dispatch(fetchData(query))
 
@@ -97,8 +97,7 @@ export function ProductDetails() {
 
     }, [url])
     const handleAddToCart=(datas)=>{
-        alert('1 product is added')
-        dispatch(addToCart(datas))
+        dispatch(addToCart(datas[0]))
         }
     let rating = parseInt(datas[0]?.ratingValue?.trim())
     const roundRating = Number(datas[0]?.ratingValue?.trim())
