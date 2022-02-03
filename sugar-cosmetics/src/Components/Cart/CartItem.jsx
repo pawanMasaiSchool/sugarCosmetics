@@ -1,18 +1,18 @@
-import '../index.css';
-import QuantityButtons from '../Styled/Cart/QuantityButtons';
+import '../../index.css';
+import QuantityButtons from '../../Styled/Cart/QuantityButtons';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
-import styles from '../cssModules/Cart.module.css'
-import FlexDiv from '../Styled/FlexDiv';
+import styles from '../../CSS/Cart.module.css'
+import FlexDiv from '../../Styled/FlexDiv';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useDispatch } from 'react-redux';
-import { removeFromCart } from '../Redux/Cart/actions';
-import RemoveProductPopup from './RemoveProductPopup';
+import { removeFromCart } from '../../Redux/Cart/actions';
+import RemoveProductPopup from '../../Components/Others/RemoveProductPopup';
 import { useState } from 'react';
-import { addToCart } from '../Redux/Cart/actions';
+import { addToCart } from '../../Redux/Cart/actions';
 
-const CartItemWithoutButtons = ({props}) => {
+const CartItem = ({props}) => {
     
     const dispatch = useDispatch()
 
@@ -41,9 +41,9 @@ const CartItemWithoutButtons = ({props}) => {
 
             <FlexDiv direction="column" basis="42%">
             <FlexDiv align="center"  justify="space-evenly">
-                <FlexDiv basis="30%" justify="center"><DeleteIcon onClick = {() => setShowPopup(true)} sx={{color: "#6c757d", fontSize:"16px"}} /></FlexDiv>
-                <FlexDiv align="center" gap="5px" basis="30%">
-                <QuantityButtons onClick={() => {
+                <FlexDiv basis="30%" justify="center"><DeleteIcon onClick = {() => setShowPopup(true)} sx={{cursor:"pointer",color: "#6c757d", fontSize:"16px"}} /></FlexDiv>
+                <FlexDiv align="center" gap="5px" basis="30%" >
+                <QuantityButtons style={{cursor:"pointer"}} onClick={() => {
                     if(props.quantity == 1){
                         console.log("Show popup")
                         setShowPopup(true)
@@ -53,7 +53,7 @@ const CartItemWithoutButtons = ({props}) => {
                     }
                 }}>-</QuantityButtons>
                 <p>{props.quantity}</p>
-                <QuantityButtons onClick={() => dispatch(addToCart(props))}>+</QuantityButtons>
+                <QuantityButtons style={{cursor:"pointer"}} onClick={() => dispatch(addToCart(props))}>+</QuantityButtons>
                 </FlexDiv>
                 <FlexDiv basis="40%">
                     <p className={styles.cartQuantityAndPrice}>{props.quantity} X {props.price} = {props.quantity * Number(props.price)}</p>
@@ -67,4 +67,4 @@ const CartItemWithoutButtons = ({props}) => {
     )
 }
 
-export default CartItemWithoutButtons
+export default CartItem

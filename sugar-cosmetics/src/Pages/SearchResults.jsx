@@ -1,13 +1,15 @@
 import { Grid, Paper } from "@mui/material"
 import { useHistory, useParams } from "react-router-dom"
-import {ItemContainer} from "../component/allStyleComponent/carouselWrapper"
+import {ItemContainer} from "../Components/Others/carouselWrapper"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { FilterSort } from "../component/allStyleComponent/filter-sort-component";
-import "../component/allStyleComponent/home.css"
+import { FilterSort } from "../Components/Others/filter-sort-component";
+import "../CSS/home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Cart/actions";
 import { useEffect } from "react";
 import { fetchData } from "../Redux/AppData/api";
+
+
 const CreateCard=({id,itemName,image,price,routes,item,handleAddToCart})=>
 {
   const history=useHistory()

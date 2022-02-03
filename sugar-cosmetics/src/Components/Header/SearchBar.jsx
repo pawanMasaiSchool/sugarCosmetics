@@ -51,8 +51,7 @@ const SearchBar = () =>{
             zIndex:"200",
             height:"45px",
             gap:"7%", 
-            width:"98.5%", 
-            // marginTop:"5px", 
+            width:"98.5%",
             color:"#6C757D",
             padding:"20px 15px 18px 15px",
             }}>
@@ -90,13 +89,6 @@ const SearchBar = () =>{
 
             <Box sx={{display:"flex", flexDirection:"row", gap:"2px", padding:"10px 0px 0px 0px"}}>
                 <PersonIcon />
-                {/* <Link sx={{color:"#000000", 
-                        textDecoration:"underline", 
-                        cursor:"pointer",
-                        fontSize:"15px",
-                        padding:"4px 1px"
-                        }}>Login/Register
-                </Link> */}
                 {isAuth === true ? (<p>{nameFetched}</p>) : (<TemporaryDrawer />)}
             </Box>
                 
@@ -110,10 +102,10 @@ const SearchBar = () =>{
                         <FavoriteIcon sx={{cursor:"pointer", width:"20px", height:"20px",}} />
                     </Tooltip>
                     <Tooltip title="Cart" placement='top-start'>
-                        <Link to="/cart" style={{textDecoration:"none"}}>
+                        <Link to="/cart" >
                         <Box sx={{textDecoration:"none"}}>
                             {(cartCount === 0) ? (<p></p>) : (<p style={{fontSize:"14px", float:"right", position:"relative",right:"2px", bottom:"8px"}}>{cartCount}</p>)}
-                            <LocalMallIcon sx={{cursor:"pointer", width:"20px", height:"20px",textDecoration:"none"}} />
+                            <LocalMallIcon sx={{cursor:"pointer", width:"20px",color:"#808080", height:"20px",textDecoration:"none"}} />
                         </Box>
                         </Link>
                         

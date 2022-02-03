@@ -3,11 +3,11 @@ import CartBoxDiv from '../Styled/Cart/CartBoxDiv'
 import CartBox from '../Styled/CartBox'
 import FlexDiv from '../Styled/FlexDiv'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import CartItemWithoutButtons from "../Components/CartItemWithoutButtons"
-import CartPriceBreakdown from '../Components/CartPriceBreakdown'
-import PaymentMethodOption from '../Components/PaymentMethodOption'
+import CartItemWithoutButtons from "../Components/Cart/CartItemWithoutButtons"
+import CartPriceBreakdown from '../Components/Cart/CartPriceBreakdown'
+import PaymentMethodOption from '../Components/Others/PaymentMethodOption'
 import { useSelector } from 'react-redux';
-import styles from "../cssModules/Cart.module.css"
+import styles from "../CSS/Cart.module.css"
 import { placeOrder } from '../Redux/Cart/actions';
 import { useDispatch } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
@@ -45,7 +45,7 @@ const Payments = () => {
     const dispatch = useDispatch()
 
     return (
-        <CartBox>
+        <CartBox style={{marginTop:"96px", marginBottom:"24px"}}>
             {/* Left */}
             <CartBoxDiv style={{paddingLeft:"0px", marginTop:"12px"}}>
                 {/* Price Details Div */}

@@ -1,8 +1,8 @@
 import React from 'react'
-import FlexDiv from '../Styled/FlexDiv'
-import styles from '../cssModules/Cart.module.css'
+import FlexDiv from '../../Styled/FlexDiv'
+import styles from '../../CSS/Cart.module.css'
 import { useDispatch } from 'react-redux'
-import { deleteProduct } from '../Redux/Cart/actions'
+import { deleteProduct } from '../../Redux/Cart/actions'
 
 const RemoveProductPopup = ({closePopup, id, price}) => {
     const dispatch = useDispatch()

@@ -8,7 +8,7 @@ import { GetNewApp } from "./GetNewApp/GetNewApp";
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#000000", color:"#ffffff",padding:"30px", width:"96%", textAlign:"center", fontFamily:"sans-serif", margin:"auto" }}>
+    <Box sx={{ backgroundColor: "#000000", color:"#ffffff",padding:"30px", width:"96%", textAlign:"center", fontFamily:"sans-serif", margin:"auto",marginTop:"8%" }}>
       <img
         src="https://in.sugarcosmetics.com/Footer_sugar_icon.png"
         style={{ width: "100px", height: "100px", margin:"auto" }}

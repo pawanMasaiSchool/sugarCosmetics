@@ -1,6 +1,6 @@
 import React from 'react'
-import FlexDiv from '../Styled/FlexDiv'
-import styles from "../cssModules/Cart.module.css"
+import FlexDiv from '../../Styled/FlexDiv'
+import styles from "../../CSS/Cart.module.css"
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -14,17 +14,17 @@ const UserAddressBox = () => {
             <FlexDiv justify="space-between" style={{margin:"0"}}>
                 <FlexDiv  style={{margin:"0"}}  align="center">
                     <p className={styles.textMuted}>Full name</p>
-                    <p className={`${styles.textBold} ${styles.pxTwo}`}>Gurbir Singh</p>
+                    <p className={`${styles.textBold} ${styles.pxTwo}`}>Pawan Sukhwani</p>
                 </FlexDiv>
                 <FlexDiv style={{margin:"0"}}>
                     <p className={styles.textMuted}>Phone number</p>
-                    <p className={`${styles.textBold} ${styles.pxTwo}`}>6280263283</p>
+                    <p className={`${styles.textBold} ${styles.pxTwo}`}>8446968624</p>
                 </FlexDiv>
             </FlexDiv>
             <FlexDiv>
                 <FlexDiv align="center">
                     <p style={{margin:"0", marginBottom:"2px"}} className={styles.textMuted}>Email</p>
-                    <p style={{margin:"0", marginBottom:"2px"}} className={`${styles.textBold} ${styles.pxTwo}`}>madness.n0thing@gmail.com</p>
+                    <p style={{margin:"0", marginBottom:"2px"}} className={`${styles.textBold} ${styles.pxTwo}`}>sukhwanipawan@gmail.com</p>
                 </FlexDiv>
             </FlexDiv>
             <FlexDiv justify="space-between">
@@ -32,8 +32,8 @@ const UserAddressBox = () => {
                     <button className={styles.addAddressBtn}>+ Add New Address</button>
             </FlexDiv>
             <div style={{backgroundColor:"#fff", fontWeight: "500", fontSize: "14px", padding:"1rem", marginBottom:"24px"}}>
-                <p style={{margin:"0", marginBottom:"2px"}}>Gurbir Singh</p>
-                <p style={{margin:"0", marginBottom:"2px"}}>6280263283</p>
+                <p style={{margin:"0", marginBottom:"2px"}}>Pawan Sukhwani</p>
+                <p style={{margin:"0", marginBottom:"2px"}}>8446968624</p>
                 <p style={{margin:"0", marginBottom:"2px"}}>House Number 807, Sector 38A</p>
                 <p style={{margin:"0", marginBottom:"2px"}}>Chandigarh, Punjab, 160036, India.</p>
             </div>

@@ -5,8 +5,8 @@ import { useState } from 'react';
 import {fetchData} from "../Redux/AppData/api"; 
 import Carousel from "react-elastic-carousel";
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { TopItemWrapper, Item, ItemContainer, WrapperItem, WrapperItem2, WrapperItem3 } from '../component/allStyleComponent/carouselWrapper';
-import "../component/allStyleComponent/home.css"
+import { TopItemWrapper, Item, ItemContainer, WrapperItem, WrapperItem2, WrapperItem3 } from '../Components/Others/carouselWrapper';
+import "../CSS/home.css";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Footer } from '../Components/Footer/Footer';
 import { Header } from '../Components/Header/Header';

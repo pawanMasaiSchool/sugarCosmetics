@@ -1,9 +1,9 @@
 import { Grid, Paper } from "@mui/material"
 import { useHistory } from "react-router-dom"
-import {ItemContainer} from "../component/allStyleComponent/carouselWrapper"
+import {ItemContainer} from "../Components/Others/carouselWrapper"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { FilterSort } from "../component/allStyleComponent/filter-sort-component";
-import "../component/allStyleComponent/home.css"
+import { FilterSort } from "../Components/Others/filter-sort-component";
+import "../CSS/home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Cart/actions";
 const CreateCard=({id,itemName,image,price,routes,product,handleAddToCart})=>
@@ -51,7 +51,8 @@ export default function MakeupPage(){
   }  
     
    
-    return <div className="Home" style={{backgroundColor:"#f5",margin:"80px 0px"}}>
+    return <div className="Home" style={{backgroundColor:"#f5", marginTop:"98px"}}>
+
       <div className='top-heading-filter'>
         <FilterSort />
       </div>

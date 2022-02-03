@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { calculateTotal } from '../Utils/utilFunctions';
-import FlexDiv from '../Styled/FlexDiv';
-import styles from '../cssModules/Cart.module.css'
+import FlexDiv from '../../Styled/FlexDiv';
+import styles from '../../CSS/Cart.module.css'
 
 const CartPriceBreakdown = () => {
     // const [discount, setDiscount] = useState(0);

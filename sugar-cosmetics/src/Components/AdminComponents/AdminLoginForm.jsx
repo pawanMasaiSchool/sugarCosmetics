@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { loginAdmin } from '../Redux/Admin/actions';
+import { loginAdmin } from '../../Redux/Admin/actions';
 import Input from '@mui/material/Input';
 import { useDispatch } from 'react-redux';
 
@@ -21,7 +21,7 @@ const AdminLoginForm = () => {
                     <TextField value={email} onChange={(e) => setEmail(e.target.value) } label="Email" name="email" type="email" variant="outlined" sx={{border:"1px solid #f5f5f5"}} />
                 </Box>
                 <Box>
-                    <TextField value={password} onChange={(e) => setPassword(e.target.value) } label="Price" name="password" type="password" variant="outlined" />
+                    <TextField value={password} onChange={(e) => setPassword(e.target.value) } label="Password" name="password" type="password" variant="outlined" />
                 </Box>
                 <Box sx={{width:"100%"}}>
                     <Button onClick = {handleLogin} variant="contained" sx={{width:"220px"}}>LOGIN</Button>

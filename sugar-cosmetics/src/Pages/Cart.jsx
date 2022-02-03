@@ -1,19 +1,15 @@
 import React from 'react'
 import CartBox from '../Styled/CartBox';
-
-import Grid from '@mui/material/Grid';
-import Stack  from '@mui/material/Stack';
 import CartHeading from '../Styled/Cart/CartHeadings'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector } from 'react-redux';
-import CartItem from "../Components/CartItem"
-import styles from "../cssModules/Cart.module.css"
+import CartItem from "../Components/Cart/CartItem"
+import styles from "../CSS/Cart.module.css"
 import CartBoxDiv from '../Styled/Cart/CartBoxDiv';
 import FlexDiv from '../Styled/FlexDiv';
 import PaymentsIcon from '@mui/icons-material/Payments';
-import { calculateTotal } from '../Utils/utilFunctions';
-import CartPriceBreakdownWithPaddingLeft from '../Components/CartPriceBreakdownWithPaddingLeft';
-import GiftCard from '../Components/GiftCard';
+import CartPriceBreakdownWithPaddingLeft from '../Components/Cart/CartPriceBreakdownWithPaddingLeft';
+import GiftCard from '../Components/Cart/GiftCard';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
@@ -23,7 +19,7 @@ const Cart = () => {
     const cartTotal = useSelector(state => state.cart.cartTotal)
 
     return (
-        <CartBox style={{padding: "5px 10px"}}>
+        <CartBox style={{padding: "5px 10px", marginTop:"96px", marginBottom:"24px"}}>
             {/* Left */}
             <CartBoxDiv  style={{marginTop:"12px"}}>
                 <FlexDiv align="center" justify="space-between">
@@ -51,7 +47,7 @@ const Cart = () => {
                         {/* Price Details Div */}
                         <FlexDiv align="center" gap="6px">
                             <img src="https://sugarcosmetics.com/desc-images/PriceDetails.svg" width="20px" height="20px"/>
-                            <p style={{fontSize:"13px"}}><span style={{textDecoration: "underline"}}>Pric</span>e Details</p>
+                            <p style={{fontSize:"13px"}}><span style={{textDecoration: "underline"}}>Price</span> Details</p>
                         </FlexDiv>
 
                         {/* Price Breakdown */}

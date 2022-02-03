@@ -5,7 +5,7 @@ import { FlexBox, FlexBox2 } from "./productComponet";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import SortIcon from '@mui/icons-material/Sort';
 import { Button, Checkbox, Divider, FormControlLabel, FormGroup, Grid, Menu, MenuItem, Paper, Popover, Typography } from "@mui/material";
-import styles from "./filter.module.css"
+import styles from "../../CSS/filter.module.css"
 import { useEffect, useState } from "react";
 import { fetchData } from "../../Redux/AppData/api";
 import { useDispatch, useStore } from "react-redux";

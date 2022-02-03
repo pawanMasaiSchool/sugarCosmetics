@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import FlexDiv from '../Styled/FlexDiv'
+import FlexDiv from '../../Styled/FlexDiv'
 
 
 const PaymentMethodOption = ({src, text}) => {

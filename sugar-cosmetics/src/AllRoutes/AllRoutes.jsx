@@ -1,7 +1,6 @@
 import { Route,Switch } from "react-router-dom";
 import Box from '@mui/material/Box';
 import MakeupPage from "../Pages/makeupPage";
-import { Home } from "@mui/icons-material";
 import { ProductDetails } from "../Pages/productPage";
 import HomePage from "../Pages/landingPage";
 import AdminProduct from "../Pages/Admin/AdminProduct";
@@ -11,8 +10,7 @@ import Payments from "../Pages/Payments"
 import AdminLogin from "../Pages/AdminLogin";
 import AdminShowOrders from "../Pages/AdminShowOrders";
 import AdminCreateProduct from "../Pages/AdminCreateProduct";
-import AdminNavbar from "../Components/AdminNavbar";
-import SearchPage from "../Pages/SearchResults";
+import SearchResult from "../Pages/SearchResults"
 
 
 function AllRoutes(){
@@ -27,17 +25,12 @@ function AllRoutes(){
             <Route exact path="/makeup">
                 <MakeupPage />
             </Route>
-
+            <Route exact path="/search/:query" >
+                <SearchResult />
+            </Route>
             <Route exact path="/products/:url">
                 <ProductDetails />
             </Route>
-
-            <Route exact path="/search/:query" >
-                <SearchPage />
-            </Route>
-
-
-
 
             <Route exact path="/brushes">
                 <Box sx={{position:"relative", top:"100px"}}>
@@ -85,20 +78,16 @@ function AllRoutes(){
                 <Payments />
             </Route>
             <Route exact path="/admin">
-                <AdminNavbar />
                 <AdminLogin />
             </Route>
             <Route exact path="/admin/orders">
-                <AdminNavbar />
                 <AdminShowOrders />
             </Route>
             <Route exact path="/admin/create">
-                <AdminNavbar />
                 <AdminCreateProduct />
             </Route>
             <Route exact path="/admin/delete">
-                <AdminNavbar />
-                <h1>Delete Product</h1>
+                <AdminProduct />
             </Route>
             <Route>
                 <Box sx={{position:"relative", top:"100px"}}>
@@ -106,7 +95,6 @@ function AllRoutes(){
                     <br/><br/><br/><br/><br/><br/><br/><br/>
                 </Box>
             </Route>
-            
         </Switch>
     )
 }

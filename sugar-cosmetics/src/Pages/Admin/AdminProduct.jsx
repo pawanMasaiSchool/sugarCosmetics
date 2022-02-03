@@ -2,10 +2,10 @@ import { Grid, Paper } from "@mui/material"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import { ItemContainer } from "../../component/allStyleComponent/carouselWrapper"
-import { FilterSort } from "../../component/allStyleComponent/filter-sort-component"
+import { ItemContainer } from "../../Components/Others/carouselWrapper"
+// import { FilterSort } from "../../Components/Others/filter-sort-component"
 import { getProductList, handleDeleteStoreProduct } from "../../Redux/Admin/DeleteProduct/DeleteApi"
-
+import AdminNavbar from "../../Components/AdminComponents/AdminNavbar"
 
 
 const CreateCard=({id,itemName,image,price,routes,onDelete})=>
@@ -17,7 +17,7 @@ return <></>
  }
  
   return (<ItemContainer width="90%" imageWidth="70%" imagePading="15px 30%" imageHeight="280px" left="15px" margin="0px" >
-
+              
                 <Paper className="box-item" sx={{cursor:"pointer",height:"400px"}}>
                  <div onClick={()=>handleViewProduct(routes)}>
                   <div>
@@ -55,10 +55,12 @@ export default function AdminProduct(){
 useEffect(()=>{
 dispatch(getProductList())
    },[])
-    return <div className="Home" style={{backgroundColor:"#f5"}}>
+    return <div className="Home" style={{backgroundColor:"#f5", marginTop:"48px"}}>
+      <AdminNavbar />
         {isLoading && <h3>isLoading</h3>}
       
          <Grid container spacing={1} sx={{width:"85%", margin:"auto", padding:"1rem 0"}}>
+           
 
     
     {datas.map((item, i) =><Grid sx={{margin:"1rem 0"}} item lg={3}><CreateCard key={item.id} id={item.id} itemName={item.name} price={item.price} image={item.image[0]} routes={item.route} onDelete={handleDelete}/></Grid>)}

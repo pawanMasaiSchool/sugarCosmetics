@@ -1,18 +1,15 @@
-import '../index.css';
-import QuantityButtons from '../Styled/Cart/QuantityButtons';
-import Typography from '@mui/material/Typography';
+import '../../index.css';
+import QuantityButtons from '../../Styled/Cart/QuantityButtons';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Grid from '@mui/material/Grid';
-import styles from '../cssModules/Cart.module.css'
-import FlexDiv from '../Styled/FlexDiv';
+import styles from '../../CSS/Cart.module.css'
+import FlexDiv from '../../Styled/FlexDiv';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useDispatch } from 'react-redux';
-import { removeFromCart } from '../Redux/Cart/actions';
-import RemoveProductPopup from './RemoveProductPopup';
+import RemoveProductPopup from '../Others/RemoveProductPopup';
 import { useState } from 'react';
-import { addToCart } from '../Redux/Cart/actions';
+import { addToCart,removeFromCart } from '../../Redux/Cart/actions';
 
-const CartItem = ({props}) => {
+const CartItemWithoutButtons = ({props}) => {
     
     const dispatch = useDispatch()
 
@@ -67,4 +64,4 @@ const CartItem = ({props}) => {
     )
 }
 
-export default CartItem
+export default CartItemWithoutButtons

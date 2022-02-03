@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useDispatch, useSelector } from 'react-redux';
-import { getOrders } from '../Redux/Admin/actions';
+import { getOrders } from '../../Redux/Admin/actions';
 
 export default function OrderList() {
 

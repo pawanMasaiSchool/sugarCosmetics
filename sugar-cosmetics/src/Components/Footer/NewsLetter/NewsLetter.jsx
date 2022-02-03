@@ -28,7 +28,7 @@ const NewsLetter = () => {
         }}
       >
         <Input
-          sx={{ color: "#999999", borderBottom: "2px solid white", width:"55%" }}
+          sx={{ color: "#999999", borderBottom: "2px solid white", width:"56%" }}
           placeholder="Your email address"
         />
         <Button
@@ -36,7 +36,7 @@ const NewsLetter = () => {
             margin: "5px",
             background: "#FC2779",
             color: "#ffffff",
-            width:"16%",
+            width:"18%",
             "&:hover": {
               color: "#ffffff",
               background: "#FC2779"

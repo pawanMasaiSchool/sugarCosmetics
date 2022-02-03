@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import styles from "../cssModules/Admin.module.css"
+import styles from "../../CSS/Admin.module.css";
 import Input from '@mui/material/Input';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct } from '../Redux/Admin/actions';
+import { addProduct } from '../../Redux/Admin/actions';
 
 const CreateProductForm = () => {
     const [form, setForm] = useState({

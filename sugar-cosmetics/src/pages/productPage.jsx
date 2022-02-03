@@ -1,18 +1,17 @@
-import { Box, Button, Grid, makeStyles, Paper, Rating } from "@mui/material"
-import { ItemContainer, TopItemWrapper, WrapperCarousel } from "../component/allStyleComponent/carouselWrapper";
-import { FlexBox, FlexBox2, ImageListBox, ItemDetailsWrapper, Wrapper } from "../component/allStyleComponent/productComponet";
+import { Box, Button, Grid, Paper, Rating } from "@mui/material"
+import { TopItemWrapper, WrapperCarousel } from "../Components/Others/carouselWrapper";
+import { FlexBox2, ImageListBox, ItemDetailsWrapper, Wrapper } from "../Components/Others/productComponet";
 import HomeIcon from '@mui/icons-material/Home';
-import "../component/allStyleComponent/productPage.css";
+import "../CSS/productPage.css";
 import Carousel from "react-elastic-carousel";
 import { useEffect, useRef, useState } from "react";
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import styles from "../component/allStyleComponent/product.module.css"
+import styles from "../CSS/product.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { getDataRequest } from "../Redux/AppData/action";
 import { fetchData } from "../Redux/AppData/api";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { addToCart } from "../Redux/Cart/actions";
 const breakPoints = [
@@ -21,7 +20,6 @@ const breakPoints = [
 ];
 
 
-// bgColor={nav=="descTab"?"#F5F0F0":"#F9F9F9"} onClick={()=>setNavTab("descTab")}
 const MoreAboutProductTab = () => {
     const [navTab, setNavTab] = useState(0)
 
@@ -80,6 +78,7 @@ export function ProductDetails() {
     const { url } = useParams()
     const history=useHistory()
     console.log(url, 'url')
+    // console.log(id)
     const imgRef = useRef(null)
     const [wishlist, setWishlist] = useState(true)
     const arr = new Array(20).fill(0)
@@ -90,10 +89,7 @@ export function ProductDetails() {
     const { isLoading, isError, datas, isProductFound } = useSelector(state => state.appData)
     useEffect(() => {
         let query = 'route=/products/' + url
-
         dispatch(fetchData(query))
-
-
 
     }, [url])
     const handleAddToCart=(datas)=>{

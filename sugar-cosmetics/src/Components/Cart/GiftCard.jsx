@@ -1,9 +1,9 @@
 import React from 'react'
-import FlexDiv from '../Styled/FlexDiv'
+import FlexDiv from '../../Styled/FlexDiv'
 import { useState } from 'react'
-import styles from "../cssModules/Cart.module.css"
+import styles from "../../CSS/Cart.module.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { applyDiscount } from '../Redux/Cart/actions'
+import { applyDiscount } from '../../Redux/Cart/actions'
 
 const GiftCard = () => {
     const [code, setCode] = useState("");

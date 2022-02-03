@@ -1,15 +1,13 @@
 import React from 'react'
-import CartPriceBreakdown from '../Components/CartPriceBreakdown'
+import CartPriceBreakdown from '../Components/Cart/CartPriceBreakdown'
 import CartBoxDiv from '../Styled/Cart/CartBoxDiv'
 import CartBox from '../Styled/CartBox'
 import FlexDiv from '../Styled/FlexDiv'
-import CartHeading from '../Styled/Cart/CartHeadings'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import CartItem from "../Components/CartItem"
+import CartItem from "../Components/Cart/CartItem"
 import {useSelector} from 'react-redux'
 import ContactsIcon from '@mui/icons-material/Contacts';
-import styles from "../cssModules/Cart.module.css"
-import UserAddressBox from '../Components/UserAddressBox'
+import UserAddressBox from '../Components/Others/UserAddressBox'
 
 
 
@@ -17,7 +15,7 @@ const Checkout = () => {
     const cart = useSelector(state => state.cart.cart)
 
     return (
-        <CartBox>
+        <CartBox style={{marginTop:"96px", marginBottom:"24px"}}>
             {/* Left */}
             <CartBoxDiv style={{paddingLeft:"0px", marginTop:"12px"}}>
                 {/* Price Details Div */}
